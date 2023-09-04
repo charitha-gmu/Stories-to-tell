@@ -1,0 +1,40 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+.home-container .full-screen-cards {
+  width: calc(100% - 25px);
+  height: 250px;
+}
+.home-container .full-screen-cards .summary-card {
+  display: flex;
+  padding: 25px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-container .full-screen-cards .summary-card .records-count-text {
+  text-align: center;
+  font-weight: bold;
+  color: #4e287d;
+}
+.home-container .flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+.home-container .flex-container .small-cards {
+  width: 35%;
+  height: 250px;
+}
+.home-container .flex-container .small-cards .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-container .link-text {
+  text-decoration: underline;
+  cursor: pointer;
+  padding-left: 5px;
+  color: #4e287d;
+}

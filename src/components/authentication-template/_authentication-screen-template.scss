@@ -1,0 +1,174 @@
+.authentication-page-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .left-container {
+        flex: 1;
+        background-color: $purple;
+
+        @media (max-width: 1080px) {
+            display: none;
+        }
+    }
+
+    .right-container {
+        flex: 1;
+
+        .right-content-container {
+            height: 100%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 1080px) {
+                width: 100%;
+            }
+
+            .logo-container {
+                flex: 1;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media (max-width: 1080px) {
+                    background-color: $purple;
+                    color: $white;
+                }
+            }
+
+            .header-text-container {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 0 50px;
+
+                @media (max-width: 1080px) {
+                    padding: 0 25px;
+                }
+
+                .title-text {
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .transcribe-text {
+                        padding-left: 5px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        color: $purple;
+                        font-size: 22px;
+                    }
+                }
+                .sub-title {
+                    font-size: $font-size-l;
+                }
+            }
+            .inputs-container {
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 50px;
+
+                @media (max-width: 1080px) {
+                    padding: 0 25px;
+                }
+
+                .textbox-container {
+                    padding: 15px 0;
+
+                    .input-textbox {
+                        margin-top: 12px;
+                        height: 40px;
+                        width: 100%;
+                    }
+                }
+
+                .forgot-password {
+                    text-align: right;
+                    margin-top: 15px;
+                    cursor: pointer;
+                }
+            }
+            .buttons-container {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .item-button {
+                    display: flex;
+                    flex: 1;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+
+                    .signup-button {
+                        width: 60%;
+                        height: 40px;
+                        color: $white;
+                        background-color: $purple;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 8px;
+                        cursor: pointer;
+                    }
+                    .separator {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+
+                        .horizontal-divider {
+                            width: 48%;
+                        }
+                        .text-divider {
+                            padding: 0 8px;
+                        }
+                    }
+                    .google-button {
+                        width: 60%;
+                        height: 40px;
+                        border: 1px solid black;
+                        display: flex;
+                        border-radius: 8px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+
+                        .google-icon {
+                            height: 20px;
+                        }
+                        .button-text {
+                            padding-left: 15px;
+                        }
+                    }
+                }
+            }
+            .footer-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+
+                .text-container {
+                    display: flex;
+
+                    .sub-title {
+                        font-size: $font-size-ml;
+                    }
+
+                    .link-text {
+                        color: $purple;
+                        font-size: $font-size-l;
+                        padding-left: 8px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

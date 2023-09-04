@@ -1,0 +1,56 @@
+body * {
+  font-family: $text-font-family;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-ml;
+  box-sizing: border-box;
+
+  @media (max-width: 1080px) {
+    font-size: $font-size-m;
+  }
+
+  @media (max-width: 730px) {
+    font-size: $font-size-s;
+  }
+
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+#root {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  background: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $text-font-family;
+  font-weight: $font-weight-bolder !important;
+}
+
+.error-message {
+  color: $red;
+  font-size: $font-size-m;
+  font-weight: $font-weight-bold;
+  font-style: italic;
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+.not-found-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: blue;
+}
