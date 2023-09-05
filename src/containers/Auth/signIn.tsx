@@ -15,13 +15,13 @@ const SignIn = () => {
     const [error, setError] = useState('');
 
     const onSubmit = async () => {
-        if (USERNAME === username && PASSWORD === password) {
+        // if (USERNAME === username && PASSWORD === password) {
             navigate('/home');
             localStorage.setItem('signedIn', JSON.stringify(true));
             setLocalStorageItemWithExpiry('LOGIN_EXPIRY', 21600000);
-        } else {
-            setError('Invalid credentials');
-        }
+        // } else {
+        //     setError('Invalid credentials');
+        // }
     };
 
     return (

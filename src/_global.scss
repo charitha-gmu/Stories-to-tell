@@ -9,11 +9,3 @@
 @import "./components/authentication-template/authentication-screen-template";
 @import "./components/modal/modal.scss";
 @import "./components/tile/tile";
-@import "./components/create-upload-success-modal/create-upload-success-modal";
-
-// import container styles
-@import "./containers/CreateScreen/create-screen";
-@import "./containers/Home/home";
-@import "./containers/JobDetails/job_details";
-@import "./containers/RecentJobs/recent-jobs";
-@import "./containers/ChatInterface/chat_interface";
