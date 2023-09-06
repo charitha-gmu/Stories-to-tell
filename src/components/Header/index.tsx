@@ -1,11 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "assets/images/logo.jpeg";
-import { Link } from "react-router-dom";
 import "./header.scss";
 
 const headersName = ["Header1", "Header2", "Header3", "Header4"];
 
 function Header() {
+  const navigate = useNavigate();
+
+  const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
+
+  const handleSignInAndSignOut = () => {
+    if (isUserLoggedIn) {
+      localStorage.removeItem("signedIn");
+      navigate("/login");
+
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <div className={`header-container gradientBg`}>
       <div className={`header-style gradientBg`}>
@@ -30,9 +43,9 @@ function Header() {
           })}
         </div>
         <div className="header-right-container">
-          <Link to="/">
-            <button>Sign In</button>
-          </Link>
+          <button onClick={handleSignInAndSignOut}>
+            {isUserLoggedIn ? "Sign Out" : "Sign In"}
+          </button>
         </div>
       </div>
     </div>
