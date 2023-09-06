@@ -1,3 +1,3 @@
-import { ReactComponent as GoogleIcon } from './google.svg'
+// import { ReactComponent as GoogleIcon } from './google.svg'
 
-export { GoogleIcon }
+// export { GoogleIcon }
