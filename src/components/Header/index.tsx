@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "assets/images/logo.jpeg";
 import "./header.scss";
+import { Logo } from "assets/images";
 
-const headersName = ["Header1", "Header2", "Header3", "Header4"];
+// const headersName = ["Header1", "Header2", "Header3", "Header4"];
 
 function Header() {
   const navigate = useNavigate();
@@ -12,11 +12,10 @@ function Header() {
 
   const handleSignInAndSignOut = () => {
     if (isUserLoggedIn) {
-      localStorage.removeItem("signedIn");
-      navigate("/login");
-
+      // localStorage.removeItem("signedIn");
+      // navigate("/login");
     } else {
-      navigate("/login");
+      // navigate("/login");
     }
   };
   return (
@@ -25,15 +24,17 @@ function Header() {
         <div className="logo-layout">
           <img
             className="logo cursor-pointer"
-            src={logo}
-            // onClick={() => {
-            //   setSearchValue('')
-            //   dispatch(resetSearchInfoRequest())
-            //   navigate('/')
-            // }}
+            src={Logo}
+            alt="logo"
+            onClick={() => {
+              navigate("/");
+            }}
           />
+          <div className="logo-text" onClick={handleSignInAndSignOut}>
+            Tales to Share
+          </div>
         </div>
-        <div className="header-category-list">
+        {/* <div className="header-category-list">
           {headersName.map((header, index) => {
             return (
               <div key={index} className={`header-category-item`}>
@@ -41,11 +42,13 @@ function Header() {
               </div>
             );
           })}
-        </div>
+        </div> */}
         <div className="header-right-container">
-          <button onClick={handleSignInAndSignOut}>
+          <div className="text" onClick={handleSignInAndSignOut}>
             {isUserLoggedIn ? "Sign Out" : "Sign In"}
-          </button>
+          </div>
+
+          <div className="text">Get Started</div>
         </div>
       </div>
     </div>
