@@ -14,13 +14,13 @@ function Routes() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const localStorageData = getLocalStorageItemWithExpiry("LOGIN_EXPIRY");
-    if (!localStorageData) {
-      localStorage.removeItem("signedIn");
-      navigate("/login");
-    }
-  }, [navigate, pathname]);
+  // useEffect(() => {
+  //   const localStorageData = getLocalStorageItemWithExpiry("LOGIN_EXPIRY");
+  //   if (!localStorageData) {
+  //     localStorage.removeItem("signedIn");
+  //     navigate("/login");
+  //   }
+  // }, [navigate, pathname]);
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 

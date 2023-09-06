@@ -1,3 +1,3 @@
-// import { ReactComponent as GoogleIcon } from './google.svg'
+import Logo from './logo.png';
 
-// export { GoogleIcon }
+export { Logo }
