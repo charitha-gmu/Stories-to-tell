@@ -1,93 +1,173 @@
-.landing-page {
+.landing-container {
   height: 100%;
   width: 100%;
-  // position: relative;
-  // overflow: hidden;
 
-  .video-container {
-    position: relative;
-    overflow: hidden;
-    height: calc(100% - 150px);
-    width: calc(100% - 100px);
-    margin: 100px 75px;
+  .landing-page {
+    height: auto;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    video {
-      position: absolute;
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      height: 650px;
+      width: calc(100%);
+      margin-top: 80px;
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+      }
+    }
+
+    .fixed-header {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      background-color: #fff;
+      /* Set your desired background color */
+      z-index: 100;
+      /* Adjust the z-index as needed to ensure it appears above other content */
+      /* Add any additional styling you want for your header */
     }
-  }
-  .fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff; /* Set your desired background color */
-    z-index: 100; /* Adjust the z-index as needed to ensure it appears above other content */
-    /* Add any additional styling you want for your header */
 
-    .text-overlay {
-      top: 0;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
-      text-align: center;
-      color: #fff;
+    .overlay-container {
+      position: absolute;
       width: 100%;
-    }
-  }
+      height: 650px;
+      top: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  .overlay-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      .center-text-overlay {
+        text-align: center;
+        color: #fff;
 
-    .center-text-overlay {
-      text-align: center;
-      color: #fff;
+        .header-text {
+          font-size: 64px;
+          font-family: "Dancing Script";
+          font-weight: 900;
+          color: white;
+          padding-bottom: 24px;
+        }
 
-      .header-text {
-        font-size: 64px;
-        font-family: "Dancing Script";
-        font-weight: 900;
-        color: white;
-        padding-bottom: 24px;
-      }
+        .tagline-text {
+          font-size: 36px;
+          font-family: "Dancing Script";
+          font-weight: 600;
+          color: white;
+          padding-bottom: 24px;
+        }
 
-      .tagline-text {
-        font-size: 36px;
-        font-family: "Dancing Script";
-        font-weight: 600;
-        color: white;
-        padding-bottom: 24px;
-      }
-
-      .get-started-btn {
-        width: 120px;
-        border-radius: 7.5px;
-        height: auto;
-        padding: 5px 10px;
-        background-color: white;
-        color: black;
-        font-family: "Dancing Script";
-        font-weight: bolder;
-        color: #ba745f;
-        font-size: 20px;
-        margin: auto;
+        .get-started-btn {
+          width: 120px;
+          border-radius: 7.5px;
+          height: auto;
+          padding: 5px 10px;
+          background-color: white;
+          color: black;
+          font-family: "Dancing Script";
+          font-weight: bolder;
+          color: #ba745f;
+          font-size: 20px;
+          margin: auto;
+          cursor: pointer;
+        }
       }
     }
-  }
 
-  h1 {
-    font-size: 3rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 10px;
+    .footer {
+      height: 250px;
+      background-color: #55abb7;
+
+      .content-container {
+        height: 225px;
+        display: flex;
+
+        .footer-logo {
+          flex: 1;
+          padding: 25px;
+          display: flex;
+
+          .logo {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            margin: 15px;
+          }
+
+          .logo-text {
+            font-size: 36px;
+            font-family: "Dancing Script";
+            font-weight: 900;
+            color: white;
+            margin-top: 20px;
+          }
+        }
+
+        .footer-content {
+          flex: 1;
+          padding: 20px;
+          display: flex;
+
+          .names-list {
+            flex: 1;
+            padding-left: 50px;
+
+            .text {
+              font-size: 20px;
+              font-family: "Dancing Script";
+              color: white;
+              margin-top: 10px;
+              cursor: pointer;
+            }
+          }
+
+          .apps-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+
+            .app-icon {
+              height: 30px;
+              width: 30px;
+              margin: 10px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .bottom-container {
+        height: 25px;
+        display: flex;
+        // justify-content: center;
+        padding-left: 50px;
+        align-items: center;
+
+        .footer-text {
+          font-size: 16px;
+          font-family: "Dancing Script";
+          color: white;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
   }
 }
