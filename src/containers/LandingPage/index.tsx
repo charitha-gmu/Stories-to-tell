@@ -7,7 +7,9 @@ import React from "react";
 const LandingPage = () => {
   return (
     <div className="landing-container">
-      <Header />
+      <div className="fixed-header">
+        <Header />
+      </div>
       <div className="landing-page">
         <div className="video-container">
           <video autoPlay muted loop>
