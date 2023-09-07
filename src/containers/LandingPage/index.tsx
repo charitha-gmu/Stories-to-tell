@@ -33,7 +33,7 @@ const LandingPage = () => {
         </div>
 
         <div className="footer">
-          <div className="content-container">
+          <div className="footer-content-container">
             <div className="footer-logo">
               <img
                 className="logo cursor-pointer"
