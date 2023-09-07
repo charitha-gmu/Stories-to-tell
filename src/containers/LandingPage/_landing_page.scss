@@ -1,85 +1,93 @@
 .landing-page {
-    height: 100%;
-    width: 100%;
-    // position: relative;
-    // overflow: hidden;
+  height: 100%;
+  width: 100%;
+  // position: relative;
+  // overflow: hidden;
 
-    .video-container {
-        position: relative;
-        overflow: hidden;
-        height: calc(100% - 150px);
-        width: calc(100% - 100px);
-        margin: 100px 75px;
+  .video-container {
+    position: relative;
+    overflow: hidden;
+    height: calc(100% - 150px);
+    width: calc(100% - 100px);
+    margin: 100px 75px;
 
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
+  }
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Set your desired background color */
+    z-index: 100; /* Adjust the z-index as needed to ensure it appears above other content */
+    /* Add any additional styling you want for your header */
 
     .text-overlay {
-        position: absolute;
-        top: 0;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        text-align: center;
-        color: #fff;
-        width: 100%;
+      top: 0;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      width: 100%;
     }
+  }
 
-    .overlay-container {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .overlay-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .center-text-overlay {
-            text-align: center;
-            color: #fff;
+    .center-text-overlay {
+      text-align: center;
+      color: #fff;
 
-            .header-text {
-                font-size: 64px;
-                font-family: "Dancing Script";
-                font-weight: 900;
-                color: white;
-                padding-bottom: 24px;
-            }
+      .header-text {
+        font-size: 64px;
+        font-family: "Dancing Script";
+        font-weight: 900;
+        color: white;
+        padding-bottom: 24px;
+      }
 
-            .tagline-text {
-                font-size: 36px;
-                font-family: "Dancing Script";
-                font-weight: 600;
-                color: white;
-                padding-bottom: 24px;
-            }
+      .tagline-text {
+        font-size: 36px;
+        font-family: "Dancing Script";
+        font-weight: 600;
+        color: white;
+        padding-bottom: 24px;
+      }
 
-            .get-started-btn {
-                width: 120px;
-                border-radius: 7.5px;
-                height: auto;
-                padding: 5px 10px;
-                background-color: white;
-                color: black;
-                font-family: "Dancing Script";
-                font-weight: bolder;
-                color: #ba745f;
-                font-size: 20px;
-                margin: auto;
-            }
-        }
+      .get-started-btn {
+        width: 120px;
+        border-radius: 7.5px;
+        height: auto;
+        padding: 5px 10px;
+        background-color: white;
+        color: black;
+        font-family: "Dancing Script";
+        font-weight: bolder;
+        color: #ba745f;
+        font-size: 20px;
+        margin: auto;
+      }
     }
+  }
 
-    h1 {
-        font-size: 3rem;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px 20px;
-        border-radius: 10px;
-    }
+  h1 {
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
 }

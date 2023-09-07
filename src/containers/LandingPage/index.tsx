@@ -10,8 +10,10 @@ const LandingPage = () => {
           {/* Add more source elements for different video formats (e.g., webm, ogg) */}
         </video>
       </div>
-      <div className="text-overlay">
-        <Header />
+      <div className="fixed-header">
+        <div className="text-overlay">
+          <Header />
+        </div>
       </div>
 
       <div className="overlay-container">
