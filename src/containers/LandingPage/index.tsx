@@ -1,8 +1,9 @@
+import React from "react";
 import { Facebook, Instagram, Twitter } from "assets/icons";
 import { Logo } from "assets/images";
 import Header from "components/Header";
 import OurStory from "components/OurStory";
-import React from "react";
+import FeatureComponent from "components/feature-component";
 
 const LandingPage = () => {
   return (
@@ -31,7 +32,12 @@ const LandingPage = () => {
             <div className="get-started-btn">Get Started</div>
           </div>
         </div>
-
+        {/* <FeatureComponent
+          image="https://withjoy.com/assets/public/marcom-prod/wedding-website/design-features/design-theme.png?opt=aggressive&ver=2"
+          header="Your Header"
+          text="Your Text"
+          direction="left"
+        /> */}
         <div className="footer">
           <div className="footer-content-container">
             <div className="footer-logo">
