@@ -84,8 +84,13 @@
         }
 
         .footer {
-            height: 250px;
+            // height: 250px;
             background-color: #55abb7;
+            font-size: 15px;
+            width: 100%;
+            color: white;
+            position: fixed;
+            bottom: 0;
 
             .footer-content-container {
                 height: 225px;
