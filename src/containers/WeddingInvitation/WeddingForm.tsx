@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useNavigate } from "react-router-dom";
 import { Logo } from "assets/images";
 import "containers/Auth/styles.scss"; // Import the SCSS file
 
@@ -13,6 +14,7 @@ const weddingSchema = Yup.object().shape({
 
 const WeddingForm = () => {
   const submitBtnRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
 
   const [initialValues] = useState({
     firstName: "",
@@ -31,6 +33,7 @@ const WeddingForm = () => {
   }) => {
     // Handle form submission here
     console.log(values);
+    navigate("/invitation");
   };
 
   return (

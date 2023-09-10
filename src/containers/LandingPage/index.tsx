@@ -34,7 +34,10 @@ const LandingPage = () => {
       <div className="landing-page">
         <div className="video-container">
           <video autoPlay muted loop>
-            <source src="/background-video.mp4" type="video/mp4" />
+            <source
+              src="https://s3.amazonaws.com/saikiran645assignment1.com/background-video.mp4"
+              type="video/mp4"
+            />
             {/* Add more source elements for different video formats (e.g., webm, ogg) */}
           </video>
         </div>
