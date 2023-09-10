@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./header.scss";
 import { Logo } from "assets/images";
 
@@ -7,15 +7,25 @@ import { Logo } from "assets/images";
 
 function Header() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 
   const handleSignInAndSignOut = () => {
     if (isUserLoggedIn) {
-      // localStorage.removeItem("signedIn");
-      // navigate("/login");
+      // navigate("/details-form");
+      localStorage.removeItem("signedIn");
+      navigate("/login");
     } else {
-      // navigate("/login");
+      navigate("/login");
+    }
+  };
+
+  const handleGetStarted = () => {
+    if (isUserLoggedIn) {
+      navigate("/details-form");
+    } else {
+      navigate(`/login`, { state: { redirect: "/details-form" } });
     }
   };
   return (
@@ -48,7 +58,9 @@ function Header() {
             {isUserLoggedIn ? "Sign Out" : "Sign In"}
           </div>
 
-          <div className="text">Get Started</div>
+          <div className="text" onClick={handleGetStarted}>
+            Get Started
+          </div>
         </div>
       </div>
     </div>

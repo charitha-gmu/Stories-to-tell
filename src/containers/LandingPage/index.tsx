@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Facebook, Instagram, Twitter } from "assets/icons";
 import { Logo, WeddingWebsite } from "assets/images";
+import { useNavigate } from "react-router-dom";
 import Header from "components/Header";
 import OurStory from "components/OurStory";
 import FeatureComponent from "components/feature-component";
@@ -11,6 +12,17 @@ const LandingPage = () => {
   const [openOurStory, setOpenOurStory] = useState<boolean>(false);
   const [openContactUs, setOpenContactUs] = useState<boolean>(false);
   const [openFaqs, setOpenFaqs] = useState<boolean>(false);
+  const navigate = useNavigate();
+
+  const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
+
+  const handleGetStarted = () => {
+    if (isUserLoggedIn) {
+      navigate("/details-form");
+    } else {
+      navigate(`/login`, { state: { redirect: "/details-form" } });
+    }
+  };
   return (
     <div className="landing-container">
       <div className="fixed-header">
@@ -34,7 +46,9 @@ const LandingPage = () => {
               be.
             </div>
 
-            <div className="get-started-btn">Get Started</div>
+            <div className="get-started-btn" onClick={handleGetStarted}>
+              Get Started
+            </div>
           </div>
         </div>
 
