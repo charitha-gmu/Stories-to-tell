@@ -24,7 +24,9 @@ function Routes() {
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 
-  return isUserLoggedIn ? <PrivateSection /> : <PublicRoutes />;
+  // return isUserLoggedIn ? <PrivateSection /> : <PublicRoutes />;
+
+  return <PublicRoutes />;
 }
 
 export default Routes;
