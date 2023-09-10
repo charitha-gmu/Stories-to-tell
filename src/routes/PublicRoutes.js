@@ -1,3 +1,4 @@
+import WeddingWebsite from "containers/WeddingWebsite";
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -10,6 +11,7 @@ function PublicRoutes() {
       <Routes>
         <Route path={"/login"} element={<SignInComponent />} />
         <Route path={"/landing-page"} element={<LandingComponent />} />
+        <Route path={"/invitation"} element={<WeddingWebsite />} />
       </Routes>
     </React.Suspense>
   );

@@ -30,7 +30,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #fff;
+            background-color: $white;
             /* Set your desired background color */
             z-index: 100;
             /* Adjust the z-index as needed to ensure it appears above other content */
@@ -48,21 +48,21 @@
 
             .center-text-overlay {
                 text-align: center;
-                color: #fff;
+                color: $white;
 
                 .header-text {
                     font-size: 64px;
-                    font-family: "Dancing Script";
+                    font-family: $font-family-dancing-script;
                     font-weight: 900;
-                    color: white;
+                    color: $white;
                     padding-bottom: 24px;
                 }
 
                 .tagline-text {
                     font-size: 36px;
-                    font-family: "Dancing Script";
+                    font-family: $font-family-dancing-script;
                     font-weight: 600;
-                    color: white;
+                    color: $white;
                     padding-bottom: 24px;
                 }
 
@@ -71,11 +71,11 @@
                     border-radius: 7.5px;
                     height: auto;
                     padding: 5px 10px;
-                    background-color: white;
+                    background-color: $white;
                     color: black;
-                    font-family: "Dancing Script";
+                    font-family: $font-family-dancing-script;
                     font-weight: bolder;
-                    color: #ba745f;
+                    color: $copper;
                     font-size: 20px;
                     margin: auto;
                     cursor: pointer;
@@ -85,12 +85,12 @@
 
         .footer {
             // height: 250px;
-            background-color: #55abb7;
+            background-color: $theme-cyan;
             font-size: 15px;
             width: 100%;
-            color: white;
-            position: fixed;
-            bottom: 0;
+            color: $white;
+            // position: fixed;
+            // bottom: 0;
 
             .footer-content-container {
                 height: 225px;
@@ -110,9 +110,9 @@
 
                     .logo-text {
                         font-size: 36px;
-                        font-family: "Dancing Script";
+                        font-family: $font-family-dancing-script;
                         font-weight: 900;
-                        color: white;
+                        color: $white;
                         margin-top: 20px;
                     }
                 }
@@ -128,8 +128,8 @@
 
                         .text {
                             font-size: 20px;
-                            font-family: "Dancing Script";
-                            color: white;
+                            font-family: $font-family-dancing-script;
+                            color: $white;
                             margin-top: 10px;
                             cursor: pointer;
                         }
@@ -160,8 +160,8 @@
 
                 .footer-text {
                     font-size: 16px;
-                    font-family: "Dancing Script";
-                    color: white;
+                    font-family: $font-family-dancing-script;
+                    color: $white;
                     margin-right: 10px;
                 }
             }

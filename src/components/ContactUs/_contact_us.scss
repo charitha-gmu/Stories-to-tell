@@ -1,0 +1,36 @@
+.faq-content-container {
+    height: 60vh;
+    width: 75vh;
+    border-radius: 15px;
+
+    .content-container {
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        padding: 25px;
+        font-family: $font-family-dancing-script;
+        font-size: 18px;
+        line-height: 24px;
+
+        .header-faqs {
+            font-family: $font-family-dancing-script;
+            font-size: 24px;
+            padding-bottom: 15px;
+        }
+
+        .questions {
+            font-family: $font-family-dancing-script;
+            font-size: 18px;
+            padding-top: 25px;
+
+            span {
+                font-size: 18px;
+                font-family: $font-family-dancing-script;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Facebook, Instagram, Twitter } from "assets/icons";
-import { Logo } from "assets/images";
+import { Logo, WeddingWebsite } from "assets/images";
 import Header from "components/Header";
 import OurStory from "components/OurStory";
 import FeatureComponent from "components/feature-component";
+import Faqs from "components/Faqs";
+import ContactUs from "components/ContactUs";
 
 const LandingPage = () => {
+  const [openOurStory, setOpenOurStory] = useState<boolean>(false);
+  const [openContactUs, setOpenContactUs] = useState<boolean>(false);
+  const [openFaqs, setOpenFaqs] = useState<boolean>(false);
   return (
     <div className="landing-container">
       <div className="fixed-header">
@@ -32,32 +37,44 @@ const LandingPage = () => {
             <div className="get-started-btn">Get Started</div>
           </div>
         </div>
-        {/* <FeatureComponent
+
+        <FeatureComponent
           image="https://withjoy.com/assets/public/marcom-prod/wedding-website/design-features/design-theme.png?opt=aggressive&ver=2"
-          header="Your Header"
-          text="Your Text"
+          header="Your Specifications, Our Priority"
+          text="We design to match your unique requirements, providing versatility you demand."
           direction="left"
-        /> */}
+        />
+
+        <FeatureComponent
+          image={WeddingWebsite}
+          header="Meet your Match"
+          text="We will match your paper suite, so everything feels like you from start to finish."
+          direction="right"
+        />
+
         <div className="footer">
           <div className="footer-content-container">
             <div className="footer-logo">
-              <img
-                className="logo cursor-pointer"
-                src={Logo}
-                alt="logo"
-                // onClick={() => {
-                //   navigate("/");
-                // }}
-              />
+              <img className="logo cursor-pointer" src={Logo} alt="logo" />
               <div className="logo-text">Tales to Share</div>
             </div>
             <div className="footer-content">
               <div className="names-list">
-                <div className="text">About Tales To Share</div>
-                <div className="text">Our Story</div>
-                <div className="text">FAQ's</div>
-                <div className="text">Contact Us</div>
-                <div className="text">Terms & Privacy</div>
+                <div className="text" onClick={() => setOpenOurStory(true)}>
+                  About Tales To Share
+                </div>
+                <div className="text" onClick={() => setOpenOurStory(true)}>
+                  Our Story
+                </div>
+                <div className="text" onClick={() => setOpenFaqs(true)}>
+                  FAQ's
+                </div>
+                <div className="text" onClick={() => setOpenContactUs(true)}>
+                  Contact Us
+                </div>
+                <div className="text" onClick={() => setOpenOurStory(true)}>
+                  Terms & Privacy
+                </div>
               </div>
 
               <div className="apps-list">
@@ -92,7 +109,11 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      {/* <OurStory /> */}
+      {openOurStory ? <OurStory toggle={() => setOpenOurStory(false)} /> : null}
+      {openFaqs ? <Faqs toggle={() => setOpenFaqs(false)} /> : null}
+      {openContactUs ? (
+        <ContactUs toggle={() => setOpenContactUs(false)} />
+      ) : null}
     </div>
   );
 };

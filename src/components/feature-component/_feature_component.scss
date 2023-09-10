@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 20px;
+    font-family: $font-family-dancing-script;
 
     &-image {
         flex: 1;
@@ -20,9 +20,11 @@
 
     &-content {
         flex: 1;
-        padding: 10px;
+        padding: 40px;
         text-align: left;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
         justify-content: flex-end;
         width: 100%;
         height: 100%;
@@ -33,10 +35,17 @@
     }
 
     &-header {
-        font-weight: bold;
+        font-weight: bolder !important;
+        font-size: 32px;
+        font-family: $font-family-dancing-script;
+        color: $copper;
     }
 
     &-text {
         margin-top: 5px;
+        font-size: 24px;
+        font-family: $font-family-dancing-script;
+        line-height: 30px;
+        // color: $theme-cyan;
     }
 }

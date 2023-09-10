@@ -2,15 +2,17 @@
 @import "./App.css";
 @import "./assets/styles/_colors.scss";
 @import "./assets/styles/_fonts.scss";
-@import "./assets/styles/common";
+@import "./assets/styles/_common.scss";
 
 // import common components styles
 @import "./components/authentication-template/authentication-screen-template";
 @import "./components/CustomModal/custom_modal";
 @import "./components/tile/tile";
-// @import "./components/create-upload-success-modal/create-upload-success-modal";
-
+@import "./components/feature-component/feature_component";
 @import "./components/OurStory/our_story";
+@import "./components/Faqs/faqs";
+@import "./components/ContactUs/contact_us";
+@import "./containers/WeddingWebsite/wedding_website";
 
 // import container styles
 @import "./containers/LandingPage/landing_page";

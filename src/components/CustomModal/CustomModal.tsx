@@ -3,24 +3,16 @@ import React from "react";
 type ModalProps = {
   isConfirmationPopup?: boolean;
   children: JSX.Element | React.ReactNode;
-  onClickOutSide?: () => void;
 };
 
-const Modal = (props: ModalProps) => {
-  const { isConfirmationPopup, children, onClickOutSide } = props;
-
-  const handleOnClickOutSide = () => {
-    if (onClickOutSide) {
-      onClickOutSide();
-    }
-  };
+const CustomModal = (props: ModalProps) => {
+  const { isConfirmationPopup, children } = props;
 
   return (
     <div
       className={`modal-container ${
         isConfirmationPopup ? "dark-background" : ""
       }`}
-      onClick={handleOnClickOutSide}
     >
       <div
         className={`modal-content ${
@@ -33,4 +25,4 @@ const Modal = (props: ModalProps) => {
   );
 };
 
-export default Modal;
+export default CustomModal;

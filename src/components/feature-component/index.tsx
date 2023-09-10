@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.scss";
 
 function FeatureComponent({ image, header, text, direction }: any) {
   return (
