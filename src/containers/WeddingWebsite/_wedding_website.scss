@@ -1,7 +1,8 @@
 .website-container {
-    height: 100vh;
+    // height: 100%;
     width: 100%;
-    background-image: url("../../assets/images/mint-green-background.png");
+    // background-image: url("../../assets/images/mint-green-background.png");
+    background-image: url("../../assets/images/background3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11,8 +12,158 @@
 
     .website-content {
         width: 60%;
-        height: 100%;
-        background-color: #f0f7f4;
-        box-shadow: 12px 12px 12px 12px rgb(65 64 62 / 10%);
+        min-height: 100%;
+        height: auto;
+        overflow-y: scroll;
+        background-color: $white;
+        box-shadow: 0 0 10px rgba(186, 116, 95, 0.5);
+
+        .header {
+            font-family: $font-family-cinzel;
+            font-size: 36px;
+            font-weight: 500;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar {
+            height: 100px;
+            padding: 0 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // background-color: $theme-cyan;
+        }
+
+        .event-photo-container {
+            height: 60%;
+            margin: 50px;
+            padding: 0 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // background-color: $copper;
+
+            .image {
+                height: calc(100% - 100px);
+                width: calc(100% - 150px);
+            }
+        }
+
+        .date-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-family-cinzel;
+            font-size: 30px;
+            padding: 25px;
+            height: auto;
+        }
+
+        .location-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-family-cinzel;
+            font-size: 24px;
+            padding: 10px;
+            height: auto;
+        }
+
+        .tagline-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            font-size: 20px;
+            font-family: "Noto Serif";
+            line-height: 28px;
+        }
+
+        .story-header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-family-cinzel;
+            font-size: 32px;
+            padding: 25px;
+        }
+
+        .story-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px calc(10%);
+            font-size: 20px;
+            font-family: "Noto Serif";
+            line-height: 28px;
+            text-align: justify;
+            padding-bottom: 100px;
+        }
+
+        .event-details-container {
+            margin-top: 35px;
+            .event-header-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $font-family-vidaloka;
+                font-size: 24px;
+                padding: 3px;
+                padding-bottom: 15px;
+                height: auto;
+                // color: $copper;
+            }
+
+            .event-date-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $font-family-vidaloka;
+                font-size: 16px;
+                padding: 3px;
+                height: auto;
+            }
+
+            .event-location-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $font-family-vidaloka;
+                font-size: 16px;
+                padding: 3px;
+                height: auto;
+                font-weight: lighter;
+            }
+
+            .location-flex {
+                display: flex;
+                justify-content: center;
+
+                .location-icon {
+                    height: 16px;
+                    width: 16px;
+                    margin: 10px 0;
+                }
+
+                .event-location-link {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: $font-family-vidaloka;
+                    font-size: 16px;
+                    padding: 3px;
+                    height: auto;
+                    font-weight: lighter;
+                    color: $copper;
+                }
+            }
+
+            &.last-div {
+                padding-bottom: 50px;
+            }
+        }
     }
 }

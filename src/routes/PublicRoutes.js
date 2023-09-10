@@ -24,7 +24,18 @@ function PublicRoutes() {
         />
         <Route path={"/"} element={<LandingComponent />} />
         <Route path={"/details-form"} element={<WeddingFormComponent />} />
-        <Route path={"/invitation"} element={<WeddingWebsite />} />
+        <Route path={"/landing-page"} element={<LandingComponent />} />
+        <Route
+          path={"/invitation"}
+          element={
+            <WeddingWebsite
+              brideName="Bride Name"
+              groomName="Groom Name"
+              date="Thursday, September 7, 2023"
+              location="Edison, NJ, USA"
+            />
+          }
+        />
       </Routes>
     </React.Suspense>
   );

@@ -7,11 +7,14 @@ import OurStory from "components/OurStory";
 import FeatureComponent from "components/feature-component";
 import Faqs from "components/Faqs";
 import ContactUs from "components/ContactUs";
+import TermsAndPrivacy from "components/TermsPrivacy";
 
 const LandingPage = () => {
   const [openOurStory, setOpenOurStory] = useState<boolean>(false);
   const [openContactUs, setOpenContactUs] = useState<boolean>(false);
   const [openFaqs, setOpenFaqs] = useState<boolean>(false);
+  const [openTermsPrivacy, setOpenTermsPrivacy] = useState<boolean>(false);
+  // const [openFaqs, setOpenFaqs] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
@@ -74,9 +77,9 @@ const LandingPage = () => {
             </div>
             <div className="footer-content">
               <div className="names-list">
-                <div className="text" onClick={() => setOpenOurStory(true)}>
+                {/* <div className="text" onClick={() => setOpenOurStory(true)}>
                   About Tales To Share
-                </div>
+                </div> */}
                 <div className="text" onClick={() => setOpenOurStory(true)}>
                   Our Story
                 </div>
@@ -86,7 +89,7 @@ const LandingPage = () => {
                 <div className="text" onClick={() => setOpenContactUs(true)}>
                   Contact Us
                 </div>
-                <div className="text" onClick={() => setOpenOurStory(true)}>
+                <div className="text" onClick={() => setOpenTermsPrivacy(true)}>
                   Terms & Privacy
                 </div>
               </div>
@@ -127,6 +130,9 @@ const LandingPage = () => {
       {openFaqs ? <Faqs toggle={() => setOpenFaqs(false)} /> : null}
       {openContactUs ? (
         <ContactUs toggle={() => setOpenContactUs(false)} />
+      ) : null}
+      {openTermsPrivacy ? (
+        <TermsAndPrivacy toggle={() => setOpenTermsPrivacy(false)} />
       ) : null}
     </div>
   );

@@ -20,6 +20,7 @@
 
     .logo-layout {
       display: flex;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
       margin: 5px 25px;
