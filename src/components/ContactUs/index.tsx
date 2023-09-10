@@ -30,7 +30,7 @@ const ContactUs = (props: ContactUsProps) => {
             <div className="questions">
               <span>General Inquires</span>
               <br />
-              Telephone: 877-331-7752
+              Telephone: 555-555-5555
               <br />
               Email: help@talestoshare.com
             </div>
