@@ -28,6 +28,11 @@
             align-items: center;
         }
 
+        .tab-container {
+            display: flex;
+            justify-content: center;
+        }
+
         .nav-bar {
             height: 100px;
             padding: 0 25px;
@@ -105,6 +110,7 @@
 
         .event-details-container {
             margin-top: 35px;
+
             .event-header-container {
                 display: flex;
                 justify-content: center;

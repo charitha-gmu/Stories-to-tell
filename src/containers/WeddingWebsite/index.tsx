@@ -3,6 +3,7 @@ import WeddingInvitationHome from "./Home";
 import WeddingInvitationStory from "./Story";
 import WeddingInvitationEvent from "./Event";
 import WeddingInvitationLocation from "./Location";
+import ButtonTabs from "components/ButtonTabs";
 
 type WeddingWebsiteProps = {
   brideName: string;
@@ -22,10 +23,13 @@ const navBarTypes = {
 const WeddingWebsite = (props: WeddingWebsiteProps) => {
   const { brideName, groomName, date, location } = props;
 
-  const [activeScreen, setActiveScreen] = useState<String>(navBarTypes.home);
+  const [selectedTab, setSelectedTab] = useState<any>([navBarTypes.home]);
 
+  const onPressButtonGroup = (tab: any) => {
+    setSelectedTab(tab);
+  };
   const render_content = () => {
-    switch (activeScreen) {
+    switch (selectedTab[0]) {
       case navBarTypes.home:
         return <WeddingInvitationHome date={date} location={location} />;
       case navBarTypes.story:
@@ -41,9 +45,20 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
     <div className="website-container">
       <div className="website-content">
         <div className="header">{`${brideName} & ${groomName}`}</div>
-        <div className="nav-bar"></div>
+        <div className="tab-container">
+          <ButtonTabs
+            options={[
+              navBarTypes.home,
+              navBarTypes.story,
+              navBarTypes.event,
+              navBarTypes.location,
+            ]}
+            selected={selectedTab}
+            onPressButtonGroup={onPressButtonGroup}
+          />
+        </div>
 
-        <>{render_content()}</>
+        {render_content()}
       </div>
     </div>
   );

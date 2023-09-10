@@ -1,0 +1,31 @@
+.button-group-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    background-color: transparent;
+
+    .customButton {
+        min-width: 100px;
+        letter-spacing: 0.5px;
+        color: black;
+        background-color: transparent;
+        font-size: larger;
+        border: 1.5px solid transparent;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        font-family: "Vidaloka";
+        // margin: 20px;
+    }
+
+    .active {
+        background-color: rgb(235, 235, 235);
+        border: 1.5px solid rgb(235, 235, 235);
+        color: black;
+        font-size: larger;
+        font-family: "Vidaloka";
+
+
+    }
+}
