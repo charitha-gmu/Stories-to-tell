@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkstories_to_tell=self.webpackChunkstories_to_tell||[]).push([[815],{815:function(e,t,s){s.r(t);s(2791);var n=s(184);t.default=function(){return(0,n.jsx)("div",{className:"home-container"})}}}]);
+//# sourceMappingURL=815.ccd71786.chunk.js.map
