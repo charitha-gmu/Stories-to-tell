@@ -22,7 +22,7 @@ function PublicRoutes() {
           path={"/forgot-password"}
           element={<ForgotPasswordComponent />}
         />
-        <Route path={"/"} element={<LandingComponent />} />
+        <Route path={""} element={<LandingComponent />} />
         <Route path={"/details-form"} element={<WeddingFormComponent />} />
         <Route path={"/landing-page"} element={<LandingComponent />} />
         <Route

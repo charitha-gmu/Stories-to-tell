@@ -1,5 +1,6 @@
 import { Location } from "assets/icons";
 import { InvitationLocation } from "assets/images";
+import GoogleMap from "components/MapView";
 import React from "react";
 
 const WeddingInvitationLocation = () => {
@@ -71,6 +72,17 @@ const WeddingInvitationLocation = () => {
           >
             1050 King Georges Post Rd, Fords, NJ, 08863, US
           </a>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "500px",
+            margin: "25px",
+          }}
+        >
+          <GoogleMap />
         </div>
       </div>
     </>

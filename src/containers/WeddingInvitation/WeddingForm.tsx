@@ -10,6 +10,8 @@ const weddingSchema = Yup.object().shape({
   partnerFirstName: Yup.string().required("Partner's First Name is required"),
   weddingDate: Yup.date().required("Wedding Date is required"),
   location: Yup.string().required("Location is required"),
+  ourStory: Yup.string().required("Our Story is required"),
+  eventDetails: Yup.string().required("Event Details is required"),
 });
 
 const WeddingForm = () => {
@@ -22,6 +24,8 @@ const WeddingForm = () => {
     weddingDate: "",
     noDate: false,
     location: "",
+    ourStory: "",
+    eventDetails: "",
   });
 
   const handleSubmit = (values: {
@@ -30,6 +34,8 @@ const WeddingForm = () => {
     weddingDate: string;
     noDate: boolean;
     location: string;
+    ourStory: string;
+    eventDetails: string;
   }) => {
     // Handle form submission here
     console.log(values);
@@ -65,6 +71,8 @@ const WeddingForm = () => {
               weddingDate: string;
               noDate: boolean;
               location: string;
+              ourStory: string;
+              eventDetails: string;
             }) => {
               handleSubmit(values);
             }}
@@ -96,6 +104,34 @@ const WeddingForm = () => {
                     />
                     <ErrorMessage
                       name="partnerFirstName"
+                      component="span"
+                      className="error-message"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      as="textarea"
+                      name="ourStory"
+                      id="ourStory"
+                      className="form-control mb-0"
+                      placeholder="Tell us love story..."
+                    />
+                    <ErrorMessage
+                      name="ourStory"
+                      component="span"
+                      className="error-message"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      as="textarea"
+                      name="eventDetails"
+                      id="eventDetails"
+                      className="form-control mb-0"
+                      placeholder="Share your event details..."
+                    />
+                    <ErrorMessage
+                      name="eventDetails"
                       component="span"
                       className="error-message"
                     />
