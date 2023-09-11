@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Stories-to-tell/static/css/main.489c8353.css",
-    "main.js": "/Stories-to-tell/static/js/main.9bd4d408.js",
+    "main.js": "/Stories-to-tell/static/js/main.3593e1a2.js",
     "static/js/815.ccd71786.chunk.js": "/Stories-to-tell/static/js/815.ccd71786.chunk.js",
     "static/js/890.0cdc0a41.chunk.js": "/Stories-to-tell/static/js/890.0cdc0a41.chunk.js",
     "static/css/187.8755e1d6.chunk.css": "/Stories-to-tell/static/css/187.8755e1d6.chunk.css",
@@ -13,7 +13,7 @@
     "static/css/495.8755e1d6.chunk.css": "/Stories-to-tell/static/css/495.8755e1d6.chunk.css",
     "static/js/495.c258b17b.chunk.js": "/Stories-to-tell/static/js/495.c258b17b.chunk.js",
     "static/css/476.8755e1d6.chunk.css": "/Stories-to-tell/static/css/476.8755e1d6.chunk.css",
-    "static/js/476.bab57eb7.chunk.js": "/Stories-to-tell/static/js/476.bab57eb7.chunk.js",
+    "static/js/476.fda00bdc.chunk.js": "/Stories-to-tell/static/js/476.fda00bdc.chunk.js",
     "static/js/787.d2594d50.chunk.js": "/Stories-to-tell/static/js/787.d2594d50.chunk.js",
     "static/js/17.dadbf29f.chunk.js": "/Stories-to-tell/static/js/17.dadbf29f.chunk.js",
     "static/media/invitation-story.png": "/Stories-to-tell/static/media/invitation-story.f8faebe1658d59b27137.png",
@@ -31,7 +31,7 @@
     "static/media/location-pin-svgrepo-com.svg": "/Stories-to-tell/static/media/location-pin-svgrepo-com.a6680187b796ef4e87ca8e024ed37eb3.svg",
     "static/media/close-sm-svgrepo-com.svg": "/Stories-to-tell/static/media/close-sm-svgrepo-com.d5c5365f7f3f45b5b5e7873c7a5ccddd.svg",
     "main.489c8353.css.map": "/Stories-to-tell/static/css/main.489c8353.css.map",
-    "main.9bd4d408.js.map": "/Stories-to-tell/static/js/main.9bd4d408.js.map",
+    "main.3593e1a2.js.map": "/Stories-to-tell/static/js/main.3593e1a2.js.map",
     "815.ccd71786.chunk.js.map": "/Stories-to-tell/static/js/815.ccd71786.chunk.js.map",
     "890.0cdc0a41.chunk.js.map": "/Stories-to-tell/static/js/890.0cdc0a41.chunk.js.map",
     "187.8755e1d6.chunk.css.map": "/Stories-to-tell/static/css/187.8755e1d6.chunk.css.map",
@@ -43,12 +43,12 @@
     "495.8755e1d6.chunk.css.map": "/Stories-to-tell/static/css/495.8755e1d6.chunk.css.map",
     "495.c258b17b.chunk.js.map": "/Stories-to-tell/static/js/495.c258b17b.chunk.js.map",
     "476.8755e1d6.chunk.css.map": "/Stories-to-tell/static/css/476.8755e1d6.chunk.css.map",
-    "476.bab57eb7.chunk.js.map": "/Stories-to-tell/static/js/476.bab57eb7.chunk.js.map",
+    "476.fda00bdc.chunk.js.map": "/Stories-to-tell/static/js/476.fda00bdc.chunk.js.map",
     "787.d2594d50.chunk.js.map": "/Stories-to-tell/static/js/787.d2594d50.chunk.js.map",
     "17.dadbf29f.chunk.js.map": "/Stories-to-tell/static/js/17.dadbf29f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.489c8353.css",
-    "static/js/main.9bd4d408.js"
+    "static/js/main.3593e1a2.js"
   ]
 }
