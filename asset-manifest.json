@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Stories-to-tell/static/css/main.3c54e4d8.css",
+    "main.css": "/Stories-to-tell/static/css/main.04c4ab50.css",
     "main.js": "/Stories-to-tell/static/js/main.aa7f2cea.js",
     "static/js/815.ccd71786.chunk.js": "/Stories-to-tell/static/js/815.ccd71786.chunk.js",
     "static/js/890.0cdc0a41.chunk.js": "/Stories-to-tell/static/js/890.0cdc0a41.chunk.js",
@@ -33,7 +33,7 @@
     "static/media/location-pin-svgrepo-com.svg": "/Stories-to-tell/static/media/location-pin-svgrepo-com.a6680187b796ef4e87ca8e024ed37eb3.svg",
     "static/media/faq-svgrepo-com.svg": "/Stories-to-tell/static/media/faq-svgrepo-com.16372cb57910daeb02a164677c58b6d2.svg",
     "static/media/close-sm-svgrepo-com.svg": "/Stories-to-tell/static/media/close-sm-svgrepo-com.d5c5365f7f3f45b5b5e7873c7a5ccddd.svg",
-    "main.3c54e4d8.css.map": "/Stories-to-tell/static/css/main.3c54e4d8.css.map",
+    "main.04c4ab50.css.map": "/Stories-to-tell/static/css/main.04c4ab50.css.map",
     "main.aa7f2cea.js.map": "/Stories-to-tell/static/js/main.aa7f2cea.js.map",
     "815.ccd71786.chunk.js.map": "/Stories-to-tell/static/js/815.ccd71786.chunk.js.map",
     "890.0cdc0a41.chunk.js.map": "/Stories-to-tell/static/js/890.0cdc0a41.chunk.js.map",
@@ -51,7 +51,7 @@
     "568.5e754172.chunk.js.map": "/Stories-to-tell/static/js/568.5e754172.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c54e4d8.css",
+    "static/css/main.04c4ab50.css",
     "static/js/main.aa7f2cea.js"
   ]
 }
