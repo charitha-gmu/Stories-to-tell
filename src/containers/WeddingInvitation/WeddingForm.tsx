@@ -149,7 +149,7 @@ const WeddingForm = () => {
                       className="error-message"
                     />
                   </div>
-                  <div className="form-check" style={{ marginBottom: "10px" }}>
+                  {/* <div className="form-check" style={{ marginBottom: "10px" }}>
                     <Field
                       type="checkbox"
                       name="noDate"
@@ -159,7 +159,7 @@ const WeddingForm = () => {
                     <label htmlFor="noDate" className="form-check-label">
                       We haven't picked a date
                     </label>
-                  </div>
+                  </div> */}
                   <div className="form-group">
                     <Field
                       type="text"
