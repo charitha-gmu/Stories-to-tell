@@ -37,8 +37,21 @@ const WeddingForm = () => {
     ourStory: string;
     eventDetails: string;
   }) => {
-    // Handle form submission here
-    console.log(values);
+    const existingUserData = JSON.parse(localStorage.getItem("user") || "{}");
+
+    const updatedUserData = {
+      ...existingUserData,
+      firstName: values.firstName,
+      partnerFirstName: values.partnerFirstName,
+      weddingDate: values.weddingDate,
+      noDate: values.noDate,
+      location: values.location,
+      ourStory: values.ourStory,
+      eventDetails: values.eventDetails,
+    };
+
+    localStorage.setItem("user", JSON.stringify(updatedUserData));
+
     navigate("/invitation");
   };
 

@@ -1,7 +1,13 @@
-import { InvitationEvent } from "assets/images";
 import React from "react";
+import { InvitationEvent } from "assets/images";
 
-const WeddingInvitationEvent = () => {
+type WeddingInvitationEventProps = {
+  userData: any;
+};
+
+const WeddingInvitationEvent = (props: WeddingInvitationEventProps) => {
+  const { userData } = props;
+
   return (
     <>
       <div className="event-photo-container">

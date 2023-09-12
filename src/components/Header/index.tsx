@@ -15,6 +15,8 @@ function Header() {
     if (isUserLoggedIn) {
       // navigate("/details-form");
       localStorage.removeItem("signedIn");
+      localStorage.removeItem("user");
+
       navigate("/login");
     } else {
       navigate("/login");
@@ -22,12 +24,29 @@ function Header() {
   };
 
   const handleGetStarted = () => {
-    if (isUserLoggedIn) {
+    if (isUserLoggedIn && getViewInvitationText() === "View Invitation") {
+      navigate("/invitation");
+    } else if (isUserLoggedIn) {
       navigate("/details-form");
     } else {
       navigate(`/login`, { state: { redirect: "/details-form" } });
     }
   };
+
+  const getViewInvitationText = () => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      const userDataObject = JSON.parse(userData);
+      const keys = Object.keys(userDataObject);
+      const keyCount = keys.length;
+      if (keyCount > 1) {
+        return "View Invitation";
+      }
+    }
+
+    return "Get Started";
+  };
+
   return (
     <div className={`header-container gradientBg`}>
       <div className={`header-style gradientBg`}>
@@ -59,7 +78,7 @@ function Header() {
           </div>
 
           <div className="text" onClick={handleGetStarted}>
-            Get Started
+            {getViewInvitationText()}
           </div>
         </div>
       </div>
