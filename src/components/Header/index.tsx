@@ -1,13 +1,13 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./header.scss";
 import { Logo } from "assets/images";
+import { getViewInvitationText } from "resources/utils";
 
 // const headersName = ["Header1", "Header2", "Header3", "Header4"];
 
 function Header() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 
@@ -15,6 +15,8 @@ function Header() {
     if (isUserLoggedIn) {
       // navigate("/details-form");
       localStorage.removeItem("signedIn");
+      localStorage.removeItem("user");
+
       navigate("/login");
     } else {
       navigate("/login");
@@ -22,12 +24,15 @@ function Header() {
   };
 
   const handleGetStarted = () => {
-    if (isUserLoggedIn) {
+    if (isUserLoggedIn && getViewInvitationText() === "View Invitation") {
+      navigate("/invitation");
+    } else if (isUserLoggedIn) {
       navigate("/details-form");
     } else {
       navigate(`/login`, { state: { redirect: "/details-form" } });
     }
   };
+
   return (
     <div className={`header-container gradientBg`}>
       <div className={`header-style gradientBg`}>
@@ -59,7 +64,7 @@ function Header() {
           </div>
 
           <div className="text" onClick={handleGetStarted}>
-            Get Started
+            {getViewInvitationText()}
           </div>
         </div>
       </div>

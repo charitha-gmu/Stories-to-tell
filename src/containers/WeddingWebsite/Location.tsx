@@ -1,7 +1,7 @@
+import React from "react";
 import { Location } from "assets/icons";
 import { InvitationLocation } from "assets/images";
 import GoogleMap from "components/MapView";
-import React from "react";
 
 const WeddingInvitationLocation = () => {
   return (

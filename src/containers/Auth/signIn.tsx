@@ -23,8 +23,14 @@ const SignIn = () => {
   });
 
   const handleSubmit = (values: { email: string; password: string }) => {
-    // Handle form submission here
+    localStorage.removeItem("users");
+
+    const newUser: any = { email: values.email };
+
+    localStorage.setItem("user", JSON.stringify(newUser));
+
     localStorage.setItem("signedIn", "true");
+
     navigate(location.state?.redirect || "/");
   };
 

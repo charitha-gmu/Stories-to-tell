@@ -11,7 +11,7 @@ const weddingSchema = Yup.object().shape({
   weddingDate: Yup.date().required("Wedding Date is required"),
   location: Yup.string().required("Location is required"),
   ourStory: Yup.string().required("Our Story is required"),
-  eventDetails: Yup.string().required("Event Details is required"),
+  // eventDetails: Yup.string().required("Event Details is required"),
 });
 
 const WeddingForm = () => {
@@ -25,7 +25,7 @@ const WeddingForm = () => {
     noDate: false,
     location: "",
     ourStory: "",
-    eventDetails: "",
+    // eventDetails: "",
   });
 
   const handleSubmit = (values: {
@@ -35,10 +35,23 @@ const WeddingForm = () => {
     noDate: boolean;
     location: string;
     ourStory: string;
-    eventDetails: string;
+    // eventDetails: string;
   }) => {
-    // Handle form submission here
-    console.log(values);
+    const existingUserData = JSON.parse(localStorage.getItem("user") || "{}");
+
+    const updatedUserData = {
+      ...existingUserData,
+      firstName: values.firstName,
+      partnerFirstName: values.partnerFirstName,
+      weddingDate: values.weddingDate,
+      noDate: values.noDate,
+      location: values.location,
+      ourStory: values.ourStory,
+      // eventDetails: values.eventDetails,
+    };
+
+    localStorage.setItem("user", JSON.stringify(updatedUserData));
+
     navigate("/invitation");
   };
 
@@ -72,7 +85,7 @@ const WeddingForm = () => {
               noDate: boolean;
               location: string;
               ourStory: string;
-              eventDetails: string;
+              // eventDetails: string;
             }) => {
               handleSubmit(values);
             }}
@@ -122,7 +135,7 @@ const WeddingForm = () => {
                       className="error-message"
                     />
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <Field
                       as="textarea"
                       name="eventDetails"
@@ -135,7 +148,7 @@ const WeddingForm = () => {
                       component="span"
                       className="error-message"
                     />
-                  </div>
+                  </div> */}
                   <div className="form-group">
                     <Field
                       type="date"
