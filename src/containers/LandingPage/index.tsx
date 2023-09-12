@@ -8,6 +8,7 @@ import FeatureComponent from "components/feature-component";
 import Faqs from "components/Faqs";
 import ContactUs from "components/ContactUs";
 import TermsAndPrivacy from "components/TermsPrivacy";
+import { getViewInvitationText } from "resources/utils";
 
 const LandingPage = () => {
   const [openOurStory, setOpenOurStory] = useState<boolean>(false);
@@ -20,12 +21,15 @@ const LandingPage = () => {
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 
   const handleGetStarted = () => {
-    if (isUserLoggedIn) {
+    if (isUserLoggedIn && getViewInvitationText() === "View Invitation") {
+      navigate("/invitation");
+    } else if (isUserLoggedIn) {
       navigate("/details-form");
     } else {
       navigate(`/login`, { state: { redirect: "/details-form" } });
     }
   };
+
   return (
     <div className="landing-container">
       <div className="fixed-header">
@@ -53,7 +57,7 @@ const LandingPage = () => {
             </div>
 
             <div className="get-started-btn" onClick={handleGetStarted}>
-              Get Started
+              {getViewInvitationText()}
             </div>
           </div>
         </div>

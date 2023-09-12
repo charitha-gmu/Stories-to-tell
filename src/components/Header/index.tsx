@@ -1,13 +1,13 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./header.scss";
 import { Logo } from "assets/images";
+import { getViewInvitationText } from "resources/utils";
 
 // const headersName = ["Header1", "Header2", "Header3", "Header4"];
 
 function Header() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 
@@ -31,20 +31,6 @@ function Header() {
     } else {
       navigate(`/login`, { state: { redirect: "/details-form" } });
     }
-  };
-
-  const getViewInvitationText = () => {
-    const userData = localStorage.getItem("user");
-    if (userData) {
-      const userDataObject = JSON.parse(userData);
-      const keys = Object.keys(userDataObject);
-      const keyCount = keys.length;
-      if (keyCount > 1) {
-        return "View Invitation";
-      }
-    }
-
-    return "Get Started";
   };
 
   return (

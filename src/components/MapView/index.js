@@ -12,8 +12,8 @@ const AnyReactComponent = ({ text, imgSrc }) => (
 const GoogleMap = () => {
   const defaultProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
+      lat: 38.852276,
+      lng: -77.3224375,
     },
     zoom: 11,
   };
@@ -26,8 +26,8 @@ const GoogleMap = () => {
     >
       {/* Pass the image source as a prop */}
       <AnyReactComponent
-        lat={10.99835602}
-        lng={77.01502627}
+        lat={38.852276}
+        lng={-77.3224375}
         text="My Marker"
         imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLzCP4_WMzxxzNY5Tq6Vz_rhPVhrJJwA8qEw&usqp=CAU"
       />
