@@ -2,7 +2,7 @@ import WeddingWebsite from "containers/WeddingWebsite";
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-const SignInComponent = lazy(() => import("containers/Auth/SignIn"));
+const SignInComponent = lazy(() => import("containers/Auth/signIn"));
 const LandingComponent = lazy(() => import("containers/LandingPage/index"));
 const ForgotPasswordComponent = lazy(() =>
   import("containers/Auth/ForgotPassword")

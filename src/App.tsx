@@ -2,9 +2,11 @@ import React from "react";
 import "./App.css";
 import "./_global.scss";
 import AppRoutes from "routes";
+
 import { HashRouter } from "react-router-dom";
 import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+
 import HelpInterface from "components/HelpInterface";
 import { Close } from "assets/icons";
 

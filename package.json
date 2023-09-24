@@ -1,6 +1,5 @@
 {
-  "homepage": "https://charitha-gmu.github.io/Stories-to-tell",
-  "name": "stories-to-tell",
+  "name": "stories-to-tell-v2",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
