@@ -1,0 +1,19 @@
+.back-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    .back-logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .bold-text {
+        font-style: bold;
+        font-size: 24px;
+        font-weight: 600;
+        color: #c99383;
+
+    }
+}

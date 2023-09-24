@@ -45,7 +45,7 @@ function Header() {
               navigate("/");
             }}
           />
-          <div className="logo-text" onClick={handleSignInAndSignOut}>
+          <div className="logo-text" style={{ cursor: "pointer" }}>
             Tales to Share
           </div>
         </div>
