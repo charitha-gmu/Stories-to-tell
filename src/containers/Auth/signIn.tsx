@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Logo } from "assets/images";
+import BackButton from "components/backButton";
 import "./styles.scss"; // Import the SCSS file
 
 const signInSchema = Yup.object().shape({
@@ -34,6 +35,10 @@ const SignIn = () => {
     navigate(location.state?.redirect || "/");
   };
 
+  const handleBackClick = () => {
+    navigate("/");
+  };
+
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -47,6 +52,7 @@ const SignIn = () => {
       </div>
       <div className="sign-in-container">
         <div className="sign-user_card">
+          <BackButton onBackClick={handleBackClick} />
           <div className="logo-layout">
             <img className="logo cursor-pointer" src={Logo} alt="logo" />
             <div className="logo-text">Tales to Share</div>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,7 @@ const weddingSchema = Yup.object().shape({
 const WeddingForm = () => {
   const submitBtnRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
+  const formRef: any = useRef();
 
   const [initialValues] = useState({
     firstName: "",
@@ -27,6 +28,23 @@ const WeddingForm = () => {
     ourStory: "",
     // eventDetails: "",
   });
+
+  const [valuesChanged, setValuesChaged] = useState(false);
+  useEffect(() => {
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue =
+        "You have unsaved changes. Are you sure you want to leave?";
+    };
+    if (valuesChanged) {
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      // Cleanup the event listener when the component unmounts
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      };
+    }
+  }, [valuesChanged]);
 
   const handleSubmit = (values: {
     firstName: string;
@@ -55,6 +73,11 @@ const WeddingForm = () => {
     navigate("/invitation");
   };
 
+  const handleChangeFormikAttribute = (name: any, value: any) => {
+    formRef.current.setFieldValue(name, value);
+    setValuesChaged(true);
+  };
+
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -78,6 +101,7 @@ const WeddingForm = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={weddingSchema}
+            innerRef={formRef}
             onSubmit={(values: {
               firstName: string;
               partnerFirstName: string;
@@ -100,6 +124,12 @@ const WeddingForm = () => {
                       id="firstName"
                       className="form-control mb-0"
                       placeholder="Your First Name"
+                      onChange={(e: any) => {
+                        handleChangeFormikAttribute(
+                          "firstName",
+                          e?.target?.value
+                        );
+                      }}
                     />
                     <ErrorMessage
                       name="firstName"
@@ -114,6 +144,12 @@ const WeddingForm = () => {
                       id="partnerFirstName"
                       className="form-control mb-0"
                       placeholder="Partner's First Name"
+                      onChange={(e: any) => {
+                        handleChangeFormikAttribute(
+                          "partnerFirstName",
+                          e?.target?.value
+                        );
+                      }}
                     />
                     <ErrorMessage
                       name="partnerFirstName"
@@ -128,6 +164,12 @@ const WeddingForm = () => {
                       id="ourStory"
                       className="form-control mb-0"
                       placeholder="Tell us love story..."
+                      onChange={(e: any) => {
+                        handleChangeFormikAttribute(
+                          "ourStory",
+                          e?.target?.value
+                        );
+                      }}
                     />
                     <ErrorMessage
                       name="ourStory"
@@ -155,6 +197,12 @@ const WeddingForm = () => {
                       name="weddingDate"
                       id="weddingDate"
                       className="form-control mb-0"
+                      onChange={(e: any) => {
+                        handleChangeFormikAttribute(
+                          "weddingDate",
+                          e?.target?.value
+                        );
+                      }}
                     />
                     <ErrorMessage
                       name="weddingDate"
@@ -180,6 +228,12 @@ const WeddingForm = () => {
                       id="location"
                       className="form-control mb-0"
                       placeholder="Location"
+                      onChange={(e: any) => {
+                        handleChangeFormikAttribute(
+                          "location",
+                          e?.target?.value
+                        );
+                      }}
                     />
                     <ErrorMessage
                       name="location"

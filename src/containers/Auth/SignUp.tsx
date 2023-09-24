@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "assets/images";
 import "./styles.scss"; // Import the SCSS file
+import BackButton from "components/backButton";
 
 const SignUpSchema: any = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -40,6 +41,10 @@ const SignUp = () => {
     navigate("/login");
   };
 
+  const handleBackClick = () => {
+    navigate("/login");
+  };
+
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -53,6 +58,7 @@ const SignUp = () => {
       </div>
       <div className="sign-in-container">
         <div className="sign-user_card">
+          <BackButton onBackClick={handleBackClick} />
           <div className="logo-layout">
             <img className="logo cursor-pointer" src={Logo} alt="logo" />
             <div className="logo-text">Tales to Share</div>
