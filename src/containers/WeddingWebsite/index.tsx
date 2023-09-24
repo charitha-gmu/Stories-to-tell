@@ -4,6 +4,8 @@ import WeddingInvitationStory from "./Story";
 import WeddingInvitationEvent from "./Event";
 import WeddingInvitationLocation from "./Location";
 import ButtonTabs from "components/ButtonTabs";
+import BackButton from "components/backButton";
+import { useNavigate } from "react-router-dom";
 
 type WeddingWebsiteProps = {
   brideName: string;
@@ -25,6 +27,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
 
   const [selectedTab, setSelectedTab] = useState<any>([navBarTypes.home]);
   const [userData, setUserData] = useState<any>(null);
+  const navigate = useNavigate();
 
   const onPressButtonGroup = (tab: any) => {
     setSelectedTab(tab);
@@ -57,13 +60,27 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
     }
   }, []);
 
+  const handleBackClick = () => {
+    navigate("/details-form");
+  };
+
   return (
     <div className="website-container">
       <div className="website-content">
         <div className="header">
-          {userData
-            ? `${userData?.firstName} & ${userData?.partnerFirstName}`
-            : `${brideName} & ${groomName}`}
+          <div className="left">
+            <BackButton
+              onBackClick={handleBackClick}
+              themedButton={false}
+              text="Back to Details"
+            />
+          </div>
+          <div className="middle">
+            {userData
+              ? `${userData?.firstName} & ${userData?.partnerFirstName}`
+              : `${brideName} & ${groomName}`}
+          </div>
+          <div className="right"></div>
         </div>
         <div className="tab-container">
           <ButtonTabs

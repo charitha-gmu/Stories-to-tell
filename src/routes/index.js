@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import PrivateSection from "routes/PrivateSection";
+import { useLocation } from "react-router-dom";
+// import PrivateSection from "routes/PrivateSection";
 import PublicRoutes from "./PublicRoutes";
-import { getLocalStorageItemWithExpiry } from "resources/utils";
+// import { getLocalStorageItemWithExpiry } from "resources/utils";
 
 function Routes() {
   const { pathname } = useLocation();
@@ -12,7 +12,7 @@ function Routes() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   const localStorageData = getLocalStorageItemWithExpiry("LOGIN_EXPIRY");
@@ -22,7 +22,7 @@ function Routes() {
   //   }
   // }, [navigate, pathname]);
 
-  const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
+  // const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
 
   // return isUserLoggedIn ? <PrivateSection /> : <PublicRoutes />;
 

@@ -6,7 +6,7 @@ type WeddingInvitationEventProps = {
 };
 
 const WeddingInvitationEvent = (props: WeddingInvitationEventProps) => {
-  const { userData } = props;
+  // const { userData } = props;
 
   return (
     <>

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "assets/images";
 import "./styles.scss"; // Import the SCSS file
 import BackButton from "components/backButton";
+import { toast } from "react-toastify";
 
 const SignUpSchema: any = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -38,6 +39,7 @@ const SignUp = () => {
     confirmPassword: string;
   }) => {
     // Handle form submission here
+    toast.success("Successfully Registered!");
     navigate("/login");
   };
 

@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "assets/images";
 import "containers/Auth/styles.scss"; // Import the SCSS file
+import BackButton from "components/backButton";
 
 const weddingSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -19,13 +20,15 @@ const WeddingForm = () => {
   const navigate = useNavigate();
   const formRef: any = useRef();
 
+  const userDetails = JSON.parse(localStorage.getItem("user") || "{}");
+
   const [initialValues] = useState({
-    firstName: "",
-    partnerFirstName: "",
-    weddingDate: "",
+    firstName: userDetails?.firstName || "",
+    partnerFirstName: userDetails?.partnerFirstName || "",
+    weddingDate: userDetails?.weddingDate || "",
     noDate: false,
-    location: "",
-    ourStory: "",
+    location: userDetails?.location || "",
+    ourStory: userDetails?.ourStory || "",
     // eventDetails: "",
   });
 
@@ -78,6 +81,10 @@ const WeddingForm = () => {
     setValuesChaged(true);
   };
 
+  const handleBackClick = () => {
+    navigate("/");
+  };
+
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -91,6 +98,7 @@ const WeddingForm = () => {
       </div>
       <div className="sign-in-container">
         <div className="sign-user_card">
+          <BackButton onBackClick={handleBackClick} />
           <div className="logo-layout">
             <img className="logo cursor-pointer" src={Logo} alt="logo" />
             <div className="logo-text">Tales to Share</div>

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-family: $font-family-dancing-script;
+    font-family: $font-family-vidaloka;
 
     &-image {
         flex: 1;
@@ -37,15 +37,16 @@
     &-header {
         font-weight: bolder !important;
         font-size: 32px;
-        font-family: $font-family-dancing-script;
+        font-family: $font-family-noto-serif;
         color: $copper;
+        font-style: italic;
     }
 
     &-text {
         margin-top: 5px;
         font-size: 24px;
-        font-family: $font-family-dancing-script;
+        font-family: $font-family-noto-serif;
         line-height: 30px;
-        // color: $theme-cyan;
+        font-style: italic;
     }
 }
