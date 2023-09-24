@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "assets/images";
 import "containers/Auth/styles.scss"; // Import the SCSS file
 import BackButton from "components/backButton";
+import { toast } from "react-toastify";
 
 const weddingSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -72,7 +73,7 @@ const WeddingForm = () => {
     };
 
     localStorage.setItem("user", JSON.stringify(updatedUserData));
-
+    toast.success("Details Saved Successfully!");
     navigate("/invitation");
   };
 
