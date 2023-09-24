@@ -67,14 +67,14 @@
                 }
 
                 .get-started-btn {
-                    width: 150px;
+                    width: 175px;
                     border-radius: 7.5px;
                     height: auto;
                     padding: 5px 10px;
                     background-color: $white;
                     color: black;
-                    font-family: $font-family-dancing-script;
-                    font-weight: bolder;
+                    font-family: $font-family-noto-serif;
+                    font-weight: 600;
                     color: $copper;
                     font-size: 20px;
                     margin: auto;
@@ -84,13 +84,11 @@
         }
 
         .footer {
-            // height: 250px;
             background-color: $theme-cyan;
             font-size: 15px;
             width: 100%;
             color: $white;
-            // position: fixed;
-            // bottom: 0;
+            font-family: $font-family-noto-serif;
 
             .footer-content-container {
                 height: 225px;
@@ -128,7 +126,6 @@
 
                         .text {
                             font-size: 20px;
-                            font-family: $font-family-dancing-script;
                             color: $white;
                             margin-top: 10px;
                             cursor: pointer;
@@ -160,7 +157,6 @@
 
                 .footer-text {
                     font-size: 16px;
-                    font-family: $font-family-dancing-script;
                     color: $white;
                     margin-right: 10px;
                 }

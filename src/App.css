@@ -2,3 +2,37 @@
   height: 100vh;
   width: 100vw;;
 }
+/* toast css */
+.Toastify__toast-container {
+  top: 75px;
+  padding: 0px 8px;
+  box-shadow: "0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2)";
+  /* Dock modal uses z-index as 9999999 */
+  z-index: 99999999;
+}
+
+.Toastify__toast {
+  height: auto;
+}
+
+.Toastify__toast-body {
+  text-align: left;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.Toastify__close-button-customized {
+  height: 16px;
+  padding-right: 12px;
+  margin: auto 0;
+}
+
+.Toastify__toast--success,
+.Toastify__toast--error {
+  background-color: #fff;
+  text-align: left;
+  font-weight: 500;
+  color: #000000;
+  border-radius: 10px;
+  padding: 0px 20px;
+}

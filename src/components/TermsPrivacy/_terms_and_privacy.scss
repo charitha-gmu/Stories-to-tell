@@ -49,17 +49,18 @@
         flex-direction: column;
         text-align: justify;
         padding: 25px;
-        font-family: $font-family-dancing-script;
+        font-family: $font-family-noto-serif;
         font-size: 18px;
         line-height: 24px;
 
         .content {
             margin: 20px 0;
             .header {
-                font-family: $font-family-dancing-script;
+                font-family: $font-family-noto-serif;
                 font-size: 24px;
                 margin-bottom: 15px;
                 text-decoration: underline;
+                font-weight: 600;
             }
             span {
                 font-family: $font-family-pacifico;

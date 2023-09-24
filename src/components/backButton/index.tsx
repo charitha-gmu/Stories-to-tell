@@ -1,12 +1,20 @@
 import React from "react";
-import { coloredBackImage } from "assets/images";
+import { BackThemed, Back } from "assets/icons";
 import "./styles.scss";
 
-const BackButton = ({ onBackClick }: any) => {
+const BackButton = ({
+  onBackClick,
+  themedButton = true,
+  text = "Back",
+}: any) => {
   return (
     <div className="back-button-container" onClick={onBackClick}>
-      <img className="back-logo" src={coloredBackImage} alt={"back"} />
-      <p className="bold-text">Back</p>
+      {themedButton ? (
+        <img className="back-logo" src={BackThemed} alt={"back"} />
+      ) : (
+        <img className="back-logo" src={Back} alt={"back"} />
+      )}
+      <p className={`bold-text ${!themedButton ? "text-black" : ""}`}>{text}</p>
     </div>
   );
 };

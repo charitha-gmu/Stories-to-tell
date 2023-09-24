@@ -11,25 +11,26 @@
         flex-direction: column;
         text-align: justify;
         padding: 25px;
-        font-family: $font-family-dancing-script;
+        font-family: $font-family-noto-serif;
         font-size: 18px;
         line-height: 24px;
 
         .header-faqs {
-            font-family: $font-family-dancing-script;
+            font-family: $font-family-noto-serif;
             font-size: 24px;
             padding-bottom: 15px;
         }
 
         .questions {
-            font-family: $font-family-dancing-script;
+            font-family: $font-family-noto-serif;
             font-size: 18px;
             padding-top: 25px;
 
             span {
                 font-size: 18px;
-                font-family: $font-family-dancing-script;
+                font-family: $font-family-noto-serif;
                 padding-bottom: 15px;
+                font-weight: 600;
             }
         }
     }

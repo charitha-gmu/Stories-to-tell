@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "assets/images";
 import "./styles.scss"; // Import the SCSS file
 import BackButton from "components/backButton";
+import { toast } from "react-toastify";
 
 const forgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -50,6 +51,7 @@ const ForgotPassword = () => {
             initialValues={initialValues}
             validationSchema={forgotPasswordSchema}
             onSubmit={(values: { email: string }, { resetForm }: any) => {
+              toast.success("Email Sent!");
               navigate("/login");
             }}
           >

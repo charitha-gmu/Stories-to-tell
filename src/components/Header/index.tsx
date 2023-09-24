@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./header.scss";
 import { Logo } from "assets/images";
-import { getViewInvitationText } from "resources/utils";
+// import { getViewInvitationText } from "resources/utils";
 
 // const headersName = ["Header1", "Header2", "Header3", "Header4"];
 
@@ -23,15 +23,15 @@ function Header() {
     }
   };
 
-  const handleGetStarted = () => {
-    if (isUserLoggedIn && getViewInvitationText() === "View Invitation") {
-      navigate("/invitation");
-    } else if (isUserLoggedIn) {
-      navigate("/details-form");
-    } else {
-      navigate(`/login`, { state: { redirect: "/details-form" } });
-    }
-  };
+  // const handleGetStarted = () => {
+  //   if (isUserLoggedIn && getViewInvitationText() === "View Invitation") {
+  //     navigate("/invitation");
+  //   } else if (isUserLoggedIn) {
+  //     navigate("/details-form");
+  //   } else {
+  //     navigate(`/login`, { state: { redirect: "/details-form" } });
+  //   }
+  // };
 
   return (
     <div className={`header-container gradientBg`}>
@@ -45,9 +45,7 @@ function Header() {
               navigate("/");
             }}
           />
-          <div className="logo-text" style={{ cursor: "pointer" }}>
-            Tales to Share
-          </div>
+          <div className="logo-text">Tales to Share</div>
         </div>
         {/* <div className="header-category-list">
           {headersName.map((header, index) => {
@@ -63,9 +61,9 @@ function Header() {
             {isUserLoggedIn ? "Sign Out" : "Sign In"}
           </div>
 
-          <div className="text" onClick={handleGetStarted}>
+          {/* <div className="text" onClick={handleGetStarted}>
             {getViewInvitationText()}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

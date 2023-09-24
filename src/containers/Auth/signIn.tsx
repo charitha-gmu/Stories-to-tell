@@ -6,6 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Logo } from "assets/images";
 import BackButton from "components/backButton";
 import "./styles.scss"; // Import the SCSS file
+import { toast } from "react-toastify";
 
 const signInSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -32,6 +33,7 @@ const SignIn = () => {
 
     localStorage.setItem("signedIn", "true");
 
+    toast.success("Login Successful!");
     navigate(location.state?.redirect || "/");
   };
 

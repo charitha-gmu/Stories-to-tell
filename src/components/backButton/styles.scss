@@ -3,17 +3,24 @@
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
+    max-height: 35px;
+    padding-top: 15px;
 
     .back-logo {
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
     }
 
     .bold-text {
-        font-style: bold;
         font-size: 24px;
-        font-weight: 600;
-        color: #c99383;
+        font-weight: 500;
+        color: #ba745f;
+        margin: 0;
+    }
 
+    & .text-black {
+        color: black;
+        font-weight: 500;
+        font-size: 18px;
     }
 }
