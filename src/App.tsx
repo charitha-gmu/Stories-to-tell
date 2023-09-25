@@ -21,7 +21,7 @@ function App() {
           hideProgressBar
           autoClose={4000}
           transition={Slide}
-          position="top-center"
+          position="top-right"
           closeButton={
             <img
               src={Close}
