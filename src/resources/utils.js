@@ -42,3 +42,14 @@ export const getViewInvitationText = () => {
 
   return "Get Started";
 };
+
+export const getRandomWithProbability = (A, B) => {
+  let randomValue = Math.random();
+  if (randomValue < 0.8) {
+    return A;
+  } else {
+    return B;
+  }
+};
+
+console.log(getRandomWithProbability());
