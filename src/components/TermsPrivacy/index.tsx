@@ -11,7 +11,7 @@ const TermsAndPrivacy = (props: TermsAndPrivacyProps) => {
   const { toggle } = props;
 
   return (
-    <CustomModal>
+    <CustomModal contentStyle={{ overflow: "hidden" }}>
       <div className="terms-privacy-content-container">
         <div className="header-container">
           <div className="logo-layout">

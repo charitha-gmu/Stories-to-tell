@@ -3,10 +3,11 @@ import React from "react";
 type ModalProps = {
   isConfirmationPopup?: boolean;
   children: JSX.Element | React.ReactNode;
+  contentStyle?: React.CSSProperties; // Style for modal content
 };
 
 const CustomModal = (props: ModalProps) => {
-  const { isConfirmationPopup, children } = props;
+  const { isConfirmationPopup, children, contentStyle } = props;
 
   return (
     <div
@@ -18,6 +19,7 @@ const CustomModal = (props: ModalProps) => {
         className={`modal-content ${
           isConfirmationPopup ? "confirmation-modal-body" : ""
         }`}
+        style={contentStyle}
       >
         {children}
       </div>
