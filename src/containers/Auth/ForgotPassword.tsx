@@ -19,7 +19,7 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -35,7 +35,7 @@ const ForgotPassword = () => {
       </div>
       <div className="sign-in-container">
         <div className="sign-user_card">
-          <BackButton onBackClick={handleBackClick} />
+          <BackButton onBackClick={handleBackClick} text={"Back to Home"} />
 
           <div className="logo-layout">
             <img className="logo cursor-pointer" src={Logo} alt="logo" />

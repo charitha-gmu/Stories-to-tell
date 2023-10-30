@@ -44,7 +44,7 @@ const SignUp = () => {
   };
 
   const handleBackClick = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -60,7 +60,7 @@ const SignUp = () => {
       </div>
       <div className="sign-in-container">
         <div className="sign-user_card">
-          <BackButton onBackClick={handleBackClick} />
+          <BackButton onBackClick={handleBackClick} text={"Back to Home"} />
           <div className="logo-layout">
             <img className="logo cursor-pointer" src={Logo} alt="logo" />
             <div className="logo-text">Tales to Share</div>
@@ -79,7 +79,10 @@ const SignUp = () => {
               handleSubmit(values);
             }}
           >
-            {() => {
+            {({ errors, touched }: any) => {
+              const isButtonDisabled: any = Object.keys(errors).some(
+                (errorKey): any => touched[errorKey]
+              );
               return (
                 <Form>
                   <div className="form-group">
@@ -155,8 +158,11 @@ const SignUp = () => {
                   <div className="sign-info">
                     <button
                       type="submit"
-                      className="btn btn-primary"
                       ref={signupBtnRef}
+                      className={`btn btn-primary ${
+                        isButtonDisabled ? "disabled" : ""
+                      }`}
+                      disabled={isButtonDisabled}
                     >
                       <span className="indicator-label">Sign Up</span>
                     </button>

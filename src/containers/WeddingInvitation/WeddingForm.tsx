@@ -268,7 +268,7 @@ const WeddingForm = () => {
                         isButtonDisabled ? "disabled" : ""
                       }`}
                       ref={submitBtnRef}
-                      disabled={isButtonDisabled} // Here's the change
+                      disabled={isButtonDisabled}
                     >
                       <span className="indicator-label">Submit </span>
                     </button>
