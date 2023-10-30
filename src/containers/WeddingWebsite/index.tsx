@@ -84,7 +84,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
           <div className="right">
             <div
               className="back-button-container"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/details-form")}
             >
               <img
                 className="back-logo"
