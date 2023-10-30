@@ -74,7 +74,10 @@ const SignIn = () => {
               handleSubmit(values);
             }}
           >
-            {() => {
+            {({ errors, touched }: any) => {
+              const isButtonDisabled: any = Object.keys(errors).some(
+                (errorKey): any => touched[errorKey]
+              );
               return (
                 <Form className="mt-4">
                   <div className="form-group">
@@ -108,8 +111,11 @@ const SignIn = () => {
                   <div className="sign-info">
                     <button
                       type="submit"
-                      className="btn btn-primary"
                       ref={loginBtnRef}
+                      className={`btn btn-primary ${
+                        isButtonDisabled ? "disabled" : ""
+                      }`}
+                      disabled={isButtonDisabled}
                     >
                       <span className="indicator-label">Sign In</span>
                     </button>
