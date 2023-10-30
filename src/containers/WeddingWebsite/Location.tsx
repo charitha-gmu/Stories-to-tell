@@ -81,6 +81,10 @@ const WeddingInvitationLocation = () => {
             height: "500px",
             margin: "25px",
           }}
+          onClick={() => {
+            const url = `https://www.google.com/maps/search/?api=1&query=38.852276,-77.3224375`;
+            window.open(url, "_blank");
+          }}
         >
           <GoogleMap />
         </div>

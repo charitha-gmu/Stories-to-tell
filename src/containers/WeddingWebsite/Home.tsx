@@ -1,7 +1,6 @@
 import React from "react";
 import { InvitationWebsiteHomePage } from "assets/images";
 import moment from "moment";
-import { getRandomWithProbability } from "resources/utils";
 
 type WeddingWebsiteHomeProps = {
   date: string;
@@ -19,10 +18,7 @@ const WeddingInvitationHome = (props: WeddingWebsiteHomeProps) => {
   return (
     <>
       <div className="event-photo-container">
-        <img
-          src={getRandomWithProbability(InvitationWebsiteHomePage, "")}
-          alt="home"
-        ></img>
+        <img src={InvitationWebsiteHomePage} alt="home"></img>
       </div>
       <div className="date-container">{userData ? formattedDate : date}</div>
       <div className="location-container">
