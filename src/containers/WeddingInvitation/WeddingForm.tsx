@@ -32,6 +32,13 @@ const WeddingForm = () => {
     ourStory: userDetails?.ourStory || "",
     // eventDetails: "",
   });
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toISOString().split("T")[0]; // This will format the date as "YYYY-MM-DD"
+    setCurrentDate(formattedDate);
+  }, []);
 
   const [valuesChanged, setValuesChaged] = useState(false);
   useEffect(() => {
@@ -123,7 +130,10 @@ const WeddingForm = () => {
               handleSubmit(values);
             }}
           >
-            {() => {
+            {({ errors, touched }: any) => {
+              const isButtonDisabled: any = Object.keys(errors).some(
+                (errorKey): any => touched[errorKey]
+              );
               return (
                 <Form className="mt-4">
                   <div className="form-group">
@@ -212,6 +222,7 @@ const WeddingForm = () => {
                           e?.target?.value
                         );
                       }}
+                      min={currentDate}
                     />
                     <ErrorMessage
                       name="weddingDate"
@@ -253,10 +264,13 @@ const WeddingForm = () => {
                   <div className="form-group">
                     <button
                       type="submit"
-                      className="btn btn-primary"
+                      className={`btn btn-primary ${
+                        isButtonDisabled ? "disabled" : ""
+                      }`}
                       ref={submitBtnRef}
+                      disabled={isButtonDisabled} // Here's the change
                     >
-                      <span className="indicator-label">Submit</span>
+                      <span className="indicator-label">Submit </span>
                     </button>
                   </div>
                 </Form>

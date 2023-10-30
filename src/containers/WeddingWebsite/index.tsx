@@ -61,7 +61,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
   }, []);
 
   const handleBackClick = () => {
-    navigate("/details-form");
+    navigate("/");
   };
 
   return (
@@ -72,7 +72,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
             <BackButton
               onBackClick={handleBackClick}
               themedButton={false}
-              text="Back to Details"
+              text="Back to Home"
             />
           </div>
           <div className="middle">
