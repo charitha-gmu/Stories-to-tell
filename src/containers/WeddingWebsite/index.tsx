@@ -6,6 +6,7 @@ import WeddingInvitationLocation from "./Location";
 import ButtonTabs from "components/ButtonTabs";
 import BackButton from "components/backButton";
 import { useNavigate } from "react-router-dom";
+import { edit } from "assets/images";
 
 type WeddingWebsiteProps = {
   brideName: string;
@@ -80,7 +81,24 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
               ? `${userData?.firstName} & ${userData?.partnerFirstName}`
               : `${brideName} & ${groomName}`}
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <div
+              className="back-button-container"
+              onClick={() => navigate("/")}
+            >
+              <img
+                className="back-logo"
+                src={edit}
+                alt={"back"}
+                style={{ height: 20, width: 20 }}
+              />
+
+              <p className={`bold-text text-black`} style={{ padding: "2px" }}>
+                {" "}
+                {"  "}Edit Details
+              </p>
+            </div>
+          </div>
         </div>
         <div className="tab-container">
           <ButtonTabs

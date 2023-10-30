@@ -55,7 +55,10 @@ const ForgotPassword = () => {
               navigate("/login");
             }}
           >
-            {() => {
+            {({ errors, touched, isValid }: any) => {
+              const isButtonDisabled: any = Object.keys(errors).some(
+                (errorKey): any => touched[errorKey]
+              );
               return (
                 <Form className="mt-4">
                   <div className="form-group">
@@ -73,7 +76,13 @@ const ForgotPassword = () => {
                     />
                   </div>
                   <div className="sign-info">
-                    <button type="submit" className="btn btn-primary">
+                    <button
+                      type="submit"
+                      className={`btn btn-primary ${
+                        isButtonDisabled ? "disabled" : ""
+                      }`}
+                      disabled={isButtonDisabled}
+                    >
                       Reset Password
                     </button>
                   </div>
