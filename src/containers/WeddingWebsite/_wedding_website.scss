@@ -28,7 +28,7 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
-                padding-top: 20px;
+                // padding-top: 20px;
             }
 
             .middle {
@@ -42,9 +42,18 @@
             }
 
             .right {
-                padding-top: 20px;
+                padding: 10px 5px;
 
                 flex: 1;
+
+                .edit-details {
+                    padding: 5px !important;
+                    border: 1px solid black;
+
+                    p {
+                        text-decoration: none !important;
+                    }
+                }
             }
         }
 
