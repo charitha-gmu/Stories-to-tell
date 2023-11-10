@@ -1,13 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Location } from "assets/icons";
 import { InvitationLocation } from "assets/images";
 import GoogleMap from "components/MapView";
 
 const WeddingInvitationLocation = () => {
+  const [zoom, setZoom] = useState(false);
   return (
     <>
       <div className="event-photo-container">
-        <img src={InvitationLocation} alt="home" className="image"></img>
+        {zoom ? (
+          <img
+            src={InvitationLocation}
+            alt="home"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              cursor: "zoom-out",
+            }}
+            onClick={() => setZoom(false)}
+          ></img>
+        ) : (
+          <img
+            src={InvitationLocation}
+            alt="home"
+            onClick={() => setZoom(true)}
+            style={{
+              cursor: "zoom-in",
+            }}
+          ></img>
+        )}
       </div>
       <div className="event-details-container">
         <div className="event-header-container">ENGAGEMENT</div>

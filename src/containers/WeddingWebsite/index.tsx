@@ -73,7 +73,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
             <BackButton
               onBackClick={handleBackClick}
               themedButton={false}
-              text="Back to Home"
+              text="Home"
             />
           </div>
           <div className="middle">
@@ -83,7 +83,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
           </div>
           <div className="right">
             <div
-              className="back-button-container"
+              className="back-button-container edit-details"
               onClick={() => navigate("/details-form")}
             >
               <img
@@ -94,8 +94,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
               />
 
               <p className={`bold-text text-black`} style={{ padding: "2px" }}>
-                {" "}
-                {"  "}Edit Details
+                Edit Details
               </p>
             </div>
           </div>

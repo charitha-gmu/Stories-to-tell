@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { InvitationEvent } from "assets/images";
 
 type WeddingInvitationEventProps = {
@@ -7,11 +7,40 @@ type WeddingInvitationEventProps = {
 
 const WeddingInvitationEvent = (props: WeddingInvitationEventProps) => {
   // const { userData } = props;
+  const [zoom, setZoom] = useState(false);
 
   return (
     <>
       <div className="event-photo-container">
-        <img src={InvitationEvent} alt="home" className="image"></img>
+        {zoom ? (
+          <img
+            src={InvitationEvent}
+            alt="home"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              cursor: "zoom-out",
+            }}
+            onClick={() => setZoom(false)}
+            className="image"
+          ></img>
+        ) : (
+          <img
+            src={InvitationEvent}
+            alt="home"
+            onClick={() => setZoom(true)}
+            style={{
+              cursor: "zoom-in",
+            }}
+            className="image"
+          ></img>
+        )}
       </div>
       <div className="event-details-container">
         <div className="event-header-container">ENGAGEMENT</div>
