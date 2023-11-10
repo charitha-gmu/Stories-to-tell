@@ -7,6 +7,8 @@ import ButtonTabs from "components/ButtonTabs";
 import BackButton from "components/backButton";
 import { useNavigate } from "react-router-dom";
 import { edit } from "assets/images";
+import DropdownTabs from "components/DropdownTabs";
+import ViewToggleButtons from "components/ViewToggleButtons";
 
 type WeddingWebsiteProps = {
   brideName: string;
@@ -25,6 +27,7 @@ const navBarTypes = {
 
 const WeddingWebsite = (props: WeddingWebsiteProps) => {
   const { brideName, groomName, date, location } = props;
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const [selectedTab, setSelectedTab] = useState<any>([navBarTypes.home]);
   const [userData, setUserData] = useState<any>(null);
@@ -65,6 +68,11 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
     navigate("/");
   };
 
+  const handleSelectChange = (selectedValue: any) => {
+    console.log("Selected:", selectedValue); // Do something with the selected value
+    setSelectedTab([selectedValue]);
+  };
+
   return (
     <div className="website-container">
       <div className="website-content">
@@ -100,18 +108,54 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
             </div>
           </div>
         </div>
-        <div className="tab-container">
-          <ButtonTabs
-            options={[
-              navBarTypes.home,
-              navBarTypes.story,
-              navBarTypes.event,
-              navBarTypes.location,
-            ]}
-            selected={selectedTab}
-            onPressButtonGroup={onPressButtonGroup}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            marginRight: "40px",
+          }}
+        >
+          {" "}
+          <ViewToggleButtons
+            showDropdown={showDropdown}
+            setShowDropdown={setShowDropdown}
           />
         </div>
+
+        {showDropdown ? (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <DropdownTabs
+              options={[
+                navBarTypes.home,
+                navBarTypes.story,
+                navBarTypes.event,
+                navBarTypes.location,
+              ]}
+              onSelectChange={handleSelectChange}
+              selected={selectedTab[0]} // Pass the currently selected tab
+            />
+          </div>
+        ) : (
+          <div className="tab-container">
+            <ButtonTabs
+              options={[
+                navBarTypes.home,
+                navBarTypes.story,
+                navBarTypes.event,
+                navBarTypes.location,
+              ]}
+              selected={selectedTab}
+              onPressButtonGroup={onPressButtonGroup}
+            />
+          </div>
+        )}
 
         {render_content()}
       </div>
