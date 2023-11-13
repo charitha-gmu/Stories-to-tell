@@ -5,7 +5,7 @@ import WeddingInvitationEvent from "./Event";
 import WeddingInvitationLocation from "./Location";
 import ButtonTabs from "components/ButtonTabs";
 import BackButton from "components/backButton";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { edit } from "assets/images";
 import DropdownTabs from "components/DropdownTabs";
 import ViewToggleButtons from "components/ViewToggleButtons";
@@ -37,6 +37,28 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
     setSelectedTab(tab);
   };
 
+  const styles = {
+    breadcrumbs: {
+      padding: "10px 15px",
+      borderRadius: "5px",
+      display: "flex",
+      alignItems: "center",
+      listStyle: "none",
+    },
+    breadcrumbLink: {
+      textDecoration: "none",
+      color: "#0275d8",
+      marginRight: "5px",
+      fontWeight: "bold",
+    },
+    breadcrumbText: {
+      color: "#555",
+      marginRight: "5px",
+    },
+    separator: {
+      marginRight: "5px",
+    },
+  };
   const render_content = () => {
     switch (selectedTab[0]) {
       case navBarTypes.home:
@@ -107,6 +129,18 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
               </p>
             </div>
           </div>
+        </div>
+        <div style={styles.breadcrumbs}>
+          <Link to="/" style={styles.breadcrumbLink}>
+            Home
+          </Link>
+          <span style={styles.separator}>/</span>
+          <Link to="/details-form" style={styles.breadcrumbLink}>
+            Wedding Details
+          </Link>
+          <span style={styles.separator}>/</span>
+
+          <span style={styles.breadcrumbText}>Wedding Invitation</span>
         </div>
         <div
           style={{
