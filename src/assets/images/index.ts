@@ -7,6 +7,8 @@ import InvitationLocation from "./invitation-website-location.png";
 import backImage from "./back.png";
 import coloredBackImage from "./back-colored.png";
 import edit from "./edit.png";
+import dropdown from "./down-arrow.png";
+import menu from "./menu.png";
 
 export {
   Logo,
@@ -18,4 +20,6 @@ export {
   backImage,
   coloredBackImage,
   edit,
+  menu,
+  dropdown,
 };
