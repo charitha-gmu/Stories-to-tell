@@ -10,12 +10,18 @@ import ContactUs from "components/ContactUs";
 import TermsAndPrivacy from "components/TermsPrivacy";
 import { getViewInvitationText } from "resources/utils";
 
+const options = {
+  learnMore: "Learn More",
+  story: "Story",
+  contactUs: "Contact Us",
+  faqs: "Faqs",
+  termsAndPrivacy: "Terms and Privacy",
+};
+
 const LandingPage = () => {
-  const [openOurStory, setOpenOurStory] = useState<boolean>(false);
-  const [openContactUs, setOpenContactUs] = useState<boolean>(false);
-  const [openFaqs, setOpenFaqs] = useState<boolean>(false);
-  const [openTermsPrivacy, setOpenTermsPrivacy] = useState<boolean>(false);
-  // const [openFaqs, setOpenFaqs] = useState<boolean>(false);
+  const [selectedOption, setSelectedOption] = useState<string>("");
+  const [selectedTab, setSelectedTab] = useState<any>([options.learnMore]);
+
   const navigate = useNavigate();
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
@@ -30,10 +36,42 @@ const LandingPage = () => {
     }
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smooth scrolling
+    });
+  };
+
+  const toggle = () => {
+    setSelectedTab([options.learnMore]);
+    setSelectedOption("");
+  };
+
+  const render_modal_content = () => {
+    switch (selectedOption) {
+      case options.story:
+        return <OurStory toggle={toggle} />;
+
+      case options.faqs:
+        return <Faqs toggle={toggle} />;
+
+      case options.contactUs:
+        return <ContactUs toggle={toggle} />;
+
+      case options.termsAndPrivacy:
+        return <TermsAndPrivacy toggle={toggle} />;
+    }
+  };
+
   return (
     <div className="landing-container">
       <div className="fixed-header">
-        <Header />
+        <Header
+          selectedTab={selectedTab}
+          setSelectedOption={setSelectedOption}
+          setSelectedTab={setSelectedTab}
+        />
       </div>
       <div className="landing-page">
         <div className="video-container">
@@ -79,7 +117,12 @@ const LandingPage = () => {
         <div className="footer">
           <div className="footer-content-container">
             <div className="footer-logo">
-              <img className="logo cursor-pointer" src={Logo} alt="logo" />
+              <img
+                className="logo cursor-pointer"
+                src={Logo}
+                alt="logo"
+                onClick={handleScrollToTop}
+              />
               <div className="logo-text">Tales to Share</div>
             </div>
             <div className="footer-content">
@@ -87,16 +130,28 @@ const LandingPage = () => {
                 {/* <div className="text" onClick={() => setOpenOurStory(true)}>
                   About Tales To Share
                 </div> */}
-                <div className="text" onClick={() => setOpenOurStory(true)}>
+                <div
+                  className="text"
+                  onClick={() => setSelectedOption(options.story)}
+                >
                   Our Story
                 </div>
-                <div className="text" onClick={() => setOpenFaqs(true)}>
+                <div
+                  className="text"
+                  onClick={() => setSelectedOption(options.faqs)}
+                >
                   FAQ's
                 </div>
-                <div className="text" onClick={() => setOpenContactUs(true)}>
+                <div
+                  className="text"
+                  onClick={() => setSelectedOption(options.contactUs)}
+                >
                   Contact Us
                 </div>
-                <div className="text" onClick={() => setOpenTermsPrivacy(true)}>
+                <div
+                  className="text"
+                  onClick={() => setSelectedOption(options.termsAndPrivacy)}
+                >
                   Terms & Privacy
                 </div>
               </div>
@@ -107,7 +162,10 @@ const LandingPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img className="app-icon" src={Instagram} alt="instagram" />
+                  <div className="icon-text-view">
+                    <img className="app-icon" src={Instagram} alt="instagram" />
+                    <p>Instagram</p>
+                  </div>
                 </a>
 
                 <a
@@ -115,7 +173,10 @@ const LandingPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img className="app-icon" src={Facebook} alt="facebook" />
+                  <div className="icon-text-view">
+                    <img className="app-icon" src={Facebook} alt="facebook" />
+                    <p>Facebook</p>
+                  </div>
                 </a>
 
                 <a
@@ -123,7 +184,10 @@ const LandingPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img className="app-icon" src={Twitter} alt="twitter" />
+                  <div className="icon-text-view">
+                    <img className="app-icon" src={Twitter} alt="twitter" />
+                    <p>Twitter</p>
+                  </div>
                 </a>
               </div>
             </div>
@@ -133,14 +197,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      {openOurStory ? <OurStory toggle={() => setOpenOurStory(false)} /> : null}
-      {openFaqs ? <Faqs toggle={() => setOpenFaqs(false)} /> : null}
-      {openContactUs ? (
-        <ContactUs toggle={() => setOpenContactUs(false)} />
-      ) : null}
-      {openTermsPrivacy ? (
-        <TermsAndPrivacy toggle={() => setOpenTermsPrivacy(false)} />
-      ) : null}
+      {render_modal_content()}
     </div>
   );
 };
