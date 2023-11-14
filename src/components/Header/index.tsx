@@ -1,12 +1,26 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./header.scss";
 import { Logo } from "assets/images";
+import DropdownTabs from "components/DropdownTabs";
 // import { getViewInvitationText } from "resources/utils";
 
-// const headersName = ["Header1", "Header2", "Header3", "Header4"];
+type HeaderProps = {
+  selectedTab: string[];
+  setSelectedOption: Dispatch<SetStateAction<string>>;
+  setSelectedTab: Dispatch<SetStateAction<string[]>>;
+};
 
-function Header() {
+const options = {
+  learnMore: "Learn More",
+  story: "Story",
+  contactUs: "Contact Us",
+  faqs: "Faqs",
+  termsAndPrivacy: "Terms and Privacy",
+};
+
+function Header(props: HeaderProps) {
+  const { setSelectedOption, setSelectedTab, selectedTab } = props;
   const navigate = useNavigate();
 
   const isUserLoggedIn = localStorage.getItem("signedIn") === "true";
@@ -21,6 +35,11 @@ function Header() {
     } else {
       navigate("/login");
     }
+  };
+
+  const handleSelectChange = (selectedValue: any) => {
+    setSelectedTab([selectedValue]);
+    setSelectedOption(selectedValue);
   };
 
   // const handleGetStarted = () => {
@@ -57,6 +76,20 @@ function Header() {
           })}
         </div> */}
         <div className="header-right-container">
+          <div>
+            <DropdownTabs
+              options={[
+                options.learnMore,
+                options.story,
+                options.faqs,
+                options.contactUs,
+                options.termsAndPrivacy,
+              ]}
+              onSelectChange={handleSelectChange}
+              selected={selectedTab[0]} // Pass the currently selected tab
+            />
+          </div>
+
           <div className="text" onClick={handleSignInAndSignOut}>
             {isUserLoggedIn ? "Sign Out" : "Sign In"}
           </div>

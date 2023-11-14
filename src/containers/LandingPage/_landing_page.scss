@@ -104,7 +104,7 @@
                         width: 60px;
                         border-radius: 50%;
                         margin: 15px;
-                        cursor: none;
+                        cursor: pointer;
                     }
 
                     .logo-text {
@@ -139,11 +139,28 @@
                         flex-direction: column;
                         padding-left: 50px;
 
-                        .app-icon {
-                            height: 30px;
-                            width: 30px;
-                            margin: 10px;
-                            cursor: pointer;
+                        a {
+                            text-decoration: none;
+                        }
+
+                        .icon-text-view {
+                            display: flex;
+
+                            .app-icon {
+                                height: 30px;
+                                width: 30px;
+                                margin: 10px;
+                                cursor: pointer;
+                            }
+
+                            p {
+                                margin: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: $white;
+                                text-decoration: none;
+                            }
                         }
                     }
                 }
