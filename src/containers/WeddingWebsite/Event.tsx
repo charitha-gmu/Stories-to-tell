@@ -53,7 +53,7 @@ const WeddingInvitationEvent = (props: WeddingInvitationEventProps) => {
       </div>
 
       <div className="event-details-container">
-        <div className="event-header-container">Bridal/Groom Ceremony</div>
+        <div className="event-header-container">BRIDAL/GROOM CEREMONY</div>
         <div className="event-date-container">Wednesday, September 6, 2023</div>
         <div className="event-date-container">10:00 AM</div>
         <div className="event-location-container">
@@ -65,7 +65,7 @@ const WeddingInvitationEvent = (props: WeddingInvitationEventProps) => {
       </div>
 
       <div className="event-details-container">
-        <div className="event-header-container">Wedding</div>
+        <div className="event-header-container">WEDDING</div>
         <div className="event-date-container">Thursday, September 7, 2023</div>
         <div className="event-date-container">9:00 AM</div>
         <div className="event-location-container">
@@ -75,7 +75,7 @@ const WeddingInvitationEvent = (props: WeddingInvitationEventProps) => {
       </div>
 
       <div className="event-details-container last-div">
-        <div className="event-header-container">Cocktail</div>
+        <div className="event-header-container">COCKTAIL</div>
         <div className="event-date-container">Friday, September 8, 2023</div>
         <div className="event-date-container">6:00 PM</div>
         <div className="event-location-container">

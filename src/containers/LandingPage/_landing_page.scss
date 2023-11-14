@@ -52,18 +52,20 @@
 
                 .header-text {
                     font-size: 64px;
-                    font-family: $font-family-dancing-script;
+                    font-family: $font-family-noto-serif;
                     font-weight: 900;
                     color: $white;
                     padding-bottom: 24px;
+                    font-style: italic;
                 }
 
                 .tagline-text {
                     font-size: 36px;
-                    font-family: $font-family-dancing-script;
+                    font-family: $font-family-noto-serif;
                     font-weight: 600;
                     color: $white;
                     padding-bottom: 24px;
+                    font-style: italic;
                 }
 
                 .get-started-btn {

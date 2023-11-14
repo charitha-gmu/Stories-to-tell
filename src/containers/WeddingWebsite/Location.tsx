@@ -54,7 +54,7 @@ const WeddingInvitationLocation = () => {
         </div>
       </div>
       <div className="event-details-container">
-        <div className="event-header-container">Bridal/Groom Ceremony</div>
+        <div className="event-header-container">BRIDAL/GROOM CEREMONY</div>
         <div className="event-location-container">The Ballroom</div>
         <div className="location-flex">
           <img src={Location} alt="location" className="location-icon"></img>
@@ -70,7 +70,7 @@ const WeddingInvitationLocation = () => {
         </div>
       </div>
       <div className="event-details-container">
-        <div className="event-header-container">Wedding</div>
+        <div className="event-header-container">WEDDING</div>
         <div className="event-location-container">The High Palace</div>
         <div className="location-flex">
           <img src={Location} alt="location" className="location-icon"></img>
@@ -85,7 +85,7 @@ const WeddingInvitationLocation = () => {
         </div>
       </div>
       <div className="event-details-container last-div">
-        <div className="event-header-container">Cocktail</div>
+        <div className="event-header-container">COCKTAIL</div>
         <div className="event-location-container">
           The Plaza at Royal Albert's Palace
         </div>
