@@ -54,6 +54,14 @@
                         text-decoration: none !important;
                     }
                 }
+
+                .edit-details:hover {
+                    border: 1px solid #ba745f;
+
+                    p {
+                        color: #ba745f;
+                    }
+                }
             }
         }
 

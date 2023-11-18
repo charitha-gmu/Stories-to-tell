@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { edit } from "assets/images";
 import DropdownTabs from "components/DropdownTabs";
 import ViewToggleButtons from "components/ViewToggleButtons";
+import { Home } from "assets/icons";
 
 type WeddingWebsiteProps = {
   brideName: string;
@@ -103,7 +104,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
             <BackButton
               onBackClick={handleBackClick}
               themedButton={false}
-              text="Home"
+              text={<img className="home-logo" src={Home} alt={"back"} />}
             />
           </div>
           <div className="middle">

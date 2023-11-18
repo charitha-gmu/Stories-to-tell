@@ -88,7 +88,9 @@
 }
 
 .btn-primary:hover {
-    background-color: #c99383;
+    background-color: transparent !important;
+    color: #ba745f;
+    border: 1px solid #ba745f;
 }
 
 /* Add this style for red error messages */

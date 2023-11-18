@@ -164,7 +164,7 @@ const LandingPage = () => {
                 >
                   <div className="icon-text-view">
                     <img className="app-icon" src={Instagram} alt="instagram" />
-                    <p>Instagram</p>
+                    {/* <p>Instagram</p> */}
                   </div>
                 </a>
 
@@ -175,7 +175,7 @@ const LandingPage = () => {
                 >
                   <div className="icon-text-view">
                     <img className="app-icon" src={Facebook} alt="facebook" />
-                    <p>Facebook</p>
+                    {/* <p>Facebook</p> */}
                   </div>
                 </a>
 
@@ -186,7 +186,7 @@ const LandingPage = () => {
                 >
                   <div className="icon-text-view">
                     <img className="app-icon" src={Twitter} alt="twitter" />
-                    <p>Twitter</p>
+                    {/* <p>Twitter</p> */}
                   </div>
                 </a>
               </div>
