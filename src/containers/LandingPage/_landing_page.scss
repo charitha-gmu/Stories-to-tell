@@ -82,6 +82,11 @@
                     margin: auto;
                     cursor: pointer;
                 }
+
+                .get-started-btn:hover {
+                    color: $white;
+                    background-color: $copper;
+                }
             }
         }
 
@@ -133,6 +138,10 @@
                             margin-top: 10px;
                             cursor: pointer;
                         }
+
+                        .text:hover {
+                            text-decoration: underline;
+                        }
                     }
 
                     .apps-list {
@@ -154,6 +163,11 @@
                                 margin: 10px;
                                 cursor: pointer;
                             }
+
+                            .app-icon :hover {
+                                border-bottom: 1px solid white;
+                            }
+                            
 
                             p {
                                 margin: 0;
