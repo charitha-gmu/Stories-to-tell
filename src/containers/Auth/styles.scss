@@ -77,21 +77,7 @@
     }
 }
 
-.btn-primary {
-    background-color: #c99383;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 100%;
-}
 
-.btn-primary:hover {
-    background-color: transparent !important;
-    color: #ba745f;
-    border: 1px solid #ba745f;
-}
 
 /* Add this style for red error messages */
 .error-message {
@@ -121,6 +107,14 @@
 .sign-in-page {
     height: 100vh;
     background-color: #f4f4f4;
+
+    .error-message {
+        display: flex;
+        text-align: start; // This aligns the text to the start of the container
+        font-style: normal;
+
+    }
+
 }
 
 .sign-in-container {
@@ -156,14 +150,21 @@
     width: 100%;
 }
 
+
 .btn-primary {
-    background-color: #c99383;
-    color: #fff;
-    border: none;
+    background-color: #fff;
+    color: #c99383;
+    border: 1px solid #c99383;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     width: 100%;
+
+    &:hover {
+        background-color: #c99383; // Prevent any hover effects
+        color: white;
+
+    }
 
     &.disabled,
     &:disabled {
@@ -172,14 +173,11 @@
         opacity: 0.7;
 
         &:hover {
-            background-color: #c6c6c6; // Prevent any hover effects
+            background-color: #c99383; // Prevent any hover effects
         }
     }
 }
 
-.btn-primary:hover {
-    background-color: #c99383;
-}
 
 .bold-text {
     font-style: bold;

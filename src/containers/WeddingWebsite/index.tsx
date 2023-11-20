@@ -92,7 +92,6 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
   };
 
   const handleSelectChange = (selectedValue: any) => {
-    console.log("Selected:", selectedValue); // Do something with the selected value
     setSelectedTab([selectedValue]);
   };
 
@@ -104,7 +103,14 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
             <BackButton
               onBackClick={handleBackClick}
               themedButton={false}
-              text={<img className="home-logo" src={Home} alt={"back"} />}
+              text={
+                <img
+                  className="home-logo"
+                  src={Home}
+                  alt={"back"}
+                  style={{ height: 30, width: 30 }}
+                />
+              }
             />
           </div>
           <div className="middle">
@@ -117,20 +123,19 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
               className="back-button-container edit-details"
               onClick={() => navigate("/details-form")}
             >
-              <img
-                className="back-logo"
-                src={edit}
-                alt={"back"}
-                style={{ height: 20, width: 20 }}
-              />
-
-              <p className={`bold-text text-black`} style={{ padding: "2px" }}>
-                Edit Details
-              </p>
+              <div className="tooltip-container">
+                <img
+                  className="back-logo"
+                  src={edit}
+                  alt={"back"}
+                  style={{ height: 30, width: 30 }}
+                />
+                <span className="tooltip-text">Edit Details</span>
+              </div>
             </div>
           </div>
         </div>
-        <div style={styles.breadcrumbs}>
+        {/* <div style={styles.breadcrumbs}>
           <Link to="/" style={styles.breadcrumbLink}>
             Home
           </Link>
@@ -141,7 +146,7 @@ const WeddingWebsite = (props: WeddingWebsiteProps) => {
           <span style={styles.separator}>/</span>
 
           <span style={styles.breadcrumbText}>Wedding Invitation</span>
-        </div>
+        </div> */}
         <div
           style={{
             display: "flex",

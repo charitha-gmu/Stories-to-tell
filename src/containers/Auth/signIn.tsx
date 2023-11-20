@@ -7,6 +7,7 @@ import { Logo } from "assets/images";
 import BackButton from "components/backButton";
 import "./styles.scss"; // Import the SCSS file
 import { toast } from "react-toastify";
+import { capitalizeFirstLetter } from "resources/utils";
 
 const signInSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -41,6 +42,13 @@ const SignIn = () => {
     navigate("/");
   };
 
+  const CustomErrorMessage = ({ name }: any) => (
+    <ErrorMessage name={name}>
+      {(msg) => (
+        <span className="error-message">* {capitalizeFirstLetter(msg)}</span>
+      )}
+    </ErrorMessage>
+  );
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -56,7 +64,12 @@ const SignIn = () => {
         <div className="sign-user_card">
           <BackButton onBackClick={handleBackClick} />
           <div className="logo-layout">
-            <img className="logo cursor-pointer" src={Logo} alt="logo" />
+            <img
+              className="logo cursor-pointer"
+              src={Logo}
+              alt="logo"
+              onClick={handleBackClick}
+            />
             <div className="logo-text">Tales to Share</div>
           </div>
           <p className="bold-text">Sign in</p>
@@ -80,7 +93,7 @@ const SignIn = () => {
               );
               return (
                 <Form className="mt-4">
-                  <div className="form-group">
+                  <div className="form-group" style={{ textAlign: "center" }}>
                     <Field
                       type="email"
                       name="email"
@@ -88,11 +101,8 @@ const SignIn = () => {
                       className="form-control mb-0"
                       placeholder="Email"
                     />
-                    <ErrorMessage
-                      name="email"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="email" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -102,11 +112,8 @@ const SignIn = () => {
                       className="form-control mb-0"
                       placeholder="Password"
                     />
-                    <ErrorMessage
-                      name="password"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="password" />
                   </div>
                   <div className="sign-info">
                     <button

@@ -1,11 +1,13 @@
 import React from "react";
 import { BackThemed, Back } from "assets/icons";
+import { Home } from "assets/icons";
 import "./styles.scss";
 
 const BackButton = ({
   onBackClick,
   themedButton = true,
   text = "Back",
+  showHomeButton = false,
 }: any) => {
   return (
     <div className="back-button-container" onClick={onBackClick}>
@@ -14,7 +16,19 @@ const BackButton = ({
       ) : (
         <img className="back-logo" src={Back} alt={"back"} />
       )}
-      <p className={`bold-text ${!themedButton ? "text-black" : ""}`}>{text}</p>
+
+      {showHomeButton ? (
+        <img
+          className="home-logo"
+          src={Home}
+          alt={"back"}
+          style={{ height: 30, width: 30 }}
+        />
+      ) : (
+        <p className={`bold-text ${!themedButton ? "text-black" : ""}`}>
+          {text}
+        </p>
+      )}
     </div>
   );
 };
