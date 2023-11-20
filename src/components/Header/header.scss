@@ -8,7 +8,7 @@
   width: 100%;
   height: 85px;
   z-index: 100;
-  position: fixed;
+  // position: fixed;
   background-color: white;
 
   .header-style {
@@ -90,7 +90,7 @@
       .text:hover {
         color: white;
         background-color: #ba745f;
-    }
+      }
 
       a {
         color: #ba745f;

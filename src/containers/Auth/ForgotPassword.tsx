@@ -7,6 +7,7 @@ import { Logo } from "assets/images";
 import "./styles.scss"; // Import the SCSS file
 import BackButton from "components/backButton";
 import { toast } from "react-toastify";
+import { capitalizeFirstLetter } from "resources/utils";
 
 const forgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -22,6 +23,13 @@ const ForgotPassword = () => {
     navigate("/");
   };
 
+  const CustomErrorMessage = ({ name }: any) => (
+    <ErrorMessage name={name}>
+      {(msg) => (
+        <span className="error-message">* {capitalizeFirstLetter(msg)}</span>
+      )}
+    </ErrorMessage>
+  );
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -38,7 +46,12 @@ const ForgotPassword = () => {
           <BackButton onBackClick={handleBackClick} text={"Back to Home"} />
 
           <div className="logo-layout">
-            <img className="logo cursor-pointer" src={Logo} alt="logo" />
+            <img
+              className="logo cursor-pointer"
+              src={Logo}
+              alt="logo"
+              onClick={handleBackClick}
+            />
             <div className="logo-text">Tales to Share</div>
           </div>
           <p className="bold-text">Reset Password</p>
@@ -69,11 +82,7 @@ const ForgotPassword = () => {
                       className="form-control  mb-0"
                       placeholder="Email"
                     />
-                    <ErrorMessage
-                      name="email"
-                      component="span"
-                      className="error-message"
-                    />
+                    <CustomErrorMessage name="email" />
                   </div>
                   <div className="sign-info">
                     <button

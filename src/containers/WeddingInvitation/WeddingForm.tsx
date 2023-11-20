@@ -6,6 +6,7 @@ import { Logo } from "assets/images";
 import "containers/Auth/styles.scss"; // Import the SCSS file
 import BackButton from "components/backButton";
 import { toast } from "react-toastify";
+import { capitalizeFirstLetter } from "resources/utils";
 
 const weddingSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -93,6 +94,14 @@ const WeddingForm = () => {
     navigate("/");
   };
 
+  const CustomErrorMessage = ({ name }: any) => (
+    <ErrorMessage name={name}>
+      {(msg) => (
+        <span className="error-message">* {capitalizeFirstLetter(msg)}</span>
+      )}
+    </ErrorMessage>
+  );
+
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -106,9 +115,14 @@ const WeddingForm = () => {
       </div>
       <div className="sign-in-container">
         <div className="sign-user_card">
-          <BackButton onBackClick={handleBackClick} />
+          <BackButton onBackClick={handleBackClick} showHomeButton={true} />
           <div className="logo-layout">
-            <img className="logo cursor-pointer" src={Logo} alt="logo" />
+            <img
+              className="logo cursor-pointer"
+              src={Logo}
+              alt="logo"
+              onClick={handleBackClick}
+            />
             <div className="logo-text">Tales to Share</div>
           </div>
           <p className="bold-text">Start building your wedding website</p>
@@ -150,11 +164,8 @@ const WeddingForm = () => {
                         );
                       }}
                     />
-                    <ErrorMessage
-                      name="firstName"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="firstName" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -170,11 +181,8 @@ const WeddingForm = () => {
                         );
                       }}
                     />
-                    <ErrorMessage
-                      name="partnerFirstName"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="partnerFirstName" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -190,11 +198,8 @@ const WeddingForm = () => {
                         );
                       }}
                     />
-                    <ErrorMessage
-                      name="ourStory"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="ourStory" />
                   </div>
                   {/* <div className="form-group">
                     <Field
@@ -224,11 +229,8 @@ const WeddingForm = () => {
                       }}
                       min={currentDate}
                     />
-                    <ErrorMessage
-                      name="weddingDate"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="weddingDate" />
                   </div>
                   {/* <div className="form-check" style={{ marginBottom: "10px" }}>
                     <Field
@@ -255,11 +257,8 @@ const WeddingForm = () => {
                         );
                       }}
                     />
-                    <ErrorMessage
-                      name="location"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="location" />
                   </div>
                   <div className="form-group">
                     <button

@@ -7,6 +7,7 @@ import { Logo } from "assets/images";
 import "./styles.scss"; // Import the SCSS file
 import BackButton from "components/backButton";
 import { toast } from "react-toastify";
+import { capitalizeFirstLetter } from "resources/utils";
 
 const SignUpSchema: any = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -47,6 +48,14 @@ const SignUp = () => {
     navigate("/");
   };
 
+  const CustomErrorMessage = ({ name }: any) => (
+    <ErrorMessage name={name}>
+      {(msg) => (
+        <span className="error-message">* {capitalizeFirstLetter(msg)}</span>
+      )}
+    </ErrorMessage>
+  );
+
   return (
     <section className="sign-in-page">
       <div className="background-container">
@@ -62,7 +71,12 @@ const SignUp = () => {
         <div className="sign-user_card">
           <BackButton onBackClick={handleBackClick} text={"Back to Home"} />
           <div className="logo-layout">
-            <img className="logo cursor-pointer" src={Logo} alt="logo" />
+            <img
+              className="logo cursor-pointer"
+              src={Logo}
+              alt="logo"
+              onClick={handleBackClick}
+            />
             <div className="logo-text">Tales to Share</div>
           </div>
           <p className="bold-text">Sign up</p>
@@ -93,11 +107,7 @@ const SignUp = () => {
                       className="form-control mb-0"
                       placeholder="First Name"
                     />
-                    <ErrorMessage
-                      name="firstName"
-                      component="span"
-                      className="error-message"
-                    />
+                    <CustomErrorMessage name="firstName" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -107,11 +117,7 @@ const SignUp = () => {
                       className="form-control mb-0"
                       placeholder="Last Name"
                     />
-                    <ErrorMessage
-                      name="lastName"
-                      component="span"
-                      className="error-message"
-                    />
+                    <CustomErrorMessage name="lastName" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -121,11 +127,7 @@ const SignUp = () => {
                       className="form-control"
                       placeholder="Email"
                     />
-                    <ErrorMessage
-                      name="email"
-                      component="span"
-                      className="error-message"
-                    />
+                    <CustomErrorMessage name="email" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -135,11 +137,8 @@ const SignUp = () => {
                       className="form-control mb-0"
                       placeholder="Password"
                     />
-                    <ErrorMessage
-                      name="password"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="password" />
                   </div>
                   <div className="form-group">
                     <Field
@@ -149,11 +148,8 @@ const SignUp = () => {
                       className="form-control mb-0"
                       placeholder="Confirm Password"
                     />
-                    <ErrorMessage
-                      name="confirmPassword"
-                      component="span"
-                      className="error-message"
-                    />
+
+                    <CustomErrorMessage name="confirmPassword" />
                   </div>
                   <div className="sign-info">
                     <button
