@@ -161,10 +161,11 @@
                                 width: 30px;
                                 margin: 10px;
                                 cursor: pointer;
+                                transition: border-bottom 0.3s;
                             }
 
-                            .app-icon :hover {
-                                border-bottom: 1px solid white;
+                            .app-icon:hover {
+                                border-bottom: 2px solid white;
                             }
 
 
