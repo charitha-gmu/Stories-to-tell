@@ -22,6 +22,7 @@ const WeddingInvitationLocation = () => {
               width: "100%",
               objectFit: "cover",
               cursor: "zoom-out",
+              zIndex: 20,
             }}
             onClick={() => setZoom(false)}
           ></img>
@@ -33,6 +34,7 @@ const WeddingInvitationLocation = () => {
             style={{
               cursor: "zoom-in",
             }}
+            className="image"
           ></img>
         )}
       </div>
