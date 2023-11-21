@@ -43,6 +43,8 @@ const WeddingInvitationHome = (props: WeddingWebsiteHomeProps) => {
             onClick={() => setZoom(true)}
             style={{
               cursor: "zoom-in",
+              maxHeight: "100%",
+              maxWidth: "80%",
             }}
           ></img>
         )}

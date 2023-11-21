@@ -115,16 +115,16 @@
 
         .event-photo-container {
             height: 60%;
-            margin: 50px;
-            padding: 0 25px;
+            // margin: 50px;
+            // padding: 0 25px;
             display: flex;
             justify-content: center;
             align-items: center;
             // background-color: $copper;
 
             .image {
-                height: calc(100% - 100px);
-                width: calc(100% - 150px);
+                max-height: 100%;
+                max-width: 80%;
             }
         }
 
