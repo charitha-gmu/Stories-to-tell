@@ -37,6 +37,8 @@ const WeddingInvitationStory = (props: WeddingInvitationStoryProps) => {
             onClick={() => setZoom(true)}
             style={{
               cursor: "zoom-in",
+              maxHeight: "100%",
+              maxWidth: "80%",
             }}
             className="image"
           ></img>
